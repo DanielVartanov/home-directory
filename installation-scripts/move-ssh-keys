@@ -1,2 +1,0 @@
-mv ~/.ssh ~/.ssh~ || true
-ln -s ~/.sensitive-dot-files/.ssh ~/.ssh

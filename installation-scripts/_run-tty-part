@@ -1,19 +1,14 @@
 # bootstrap:
-# sudo apt-get install -y git && mkdir -p ~/bin &&  git clone https://DanielVartanov@bitbucket.org/DanielVartanov/installation-scripts.git ~/bin/system-installation-scripts
+# sudo apt-get install -y git && git clone https://github.com/DanielVartanov/home-directory.git ~/.home-directory
+# copy personal-data to ~/.personal-data
 
 set -v
 set -e
 
+./make-dirs
 ./sudo-without-password
 ./ubuntu-update-upgrade
-
-./clone-dot-files
 ./configure-git
-
-./move-ssh-keys
-
-./make-dirs
-
 ./install-pass
 ./install-common-packages
 ./install-common-dev-packages
