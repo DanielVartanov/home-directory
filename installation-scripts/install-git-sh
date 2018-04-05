@@ -1,0 +1,6 @@
+cd ~/src
+git clone https://github.com/rtomayko/git-sh.git
+cd git-sh
+make && sudo make install
+
+ln -s -b ~/.dot-files/.gitshrc ~/.gitshrc

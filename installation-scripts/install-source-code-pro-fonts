@@ -1,0 +1,5 @@
+cd /tmp
+wget -O font.tar.gz https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
+tar -zxf font.tar.gz
+sudo cp /tmp/source-code-pro-1.017R/TTF/* /usr/share/fonts/
+sudo fc-cache

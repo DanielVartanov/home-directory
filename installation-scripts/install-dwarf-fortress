@@ -1,0 +1,15 @@
+sudo apt install -y libsdl1.2debian libsdl-image1.2 libSDL-ttf2.0-0
+mkdir -p ~/opt
+cd ~/opt
+
+wget http://www.bay12games.com/dwarves/df_44_09_linux.tar.bz2  -O df_linux.tar.bz2
+tar xjf df_linux.tar.bz2
+rm df_linux.tar.bz2
+
+sudo apt install -y qt5-qmake qtbase5-dev qtbase5-dev-tools qtdeclarative5-dev
+sudo apt install -y texlive-latex-extra
+git clone https://github.com/splintermind/Dwarf-Therapist.git --depth=1
+cd Dwarf-Therapist
+qmake -qt=5
+make -j$(nproc)
+sudo make install

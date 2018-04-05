@@ -1,0 +1,3 @@
+cd ~/src
+git clone https://github.com/DanielVartanov/willgit.git
+sudo install willgit/bin/git-wtf /usr/local/bin

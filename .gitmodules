@@ -1,0 +1,3 @@
+[submodule ".config/awesome/awpwkb"]
+	path = dot-files/.config/awesome/awpwkb
+	url = https://github.com/vladimir-g/awpwkb.git

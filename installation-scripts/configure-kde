@@ -1,0 +1,4 @@
+mv ~/.config/autostart ~/.config/autostart~
+
+cd ~/personal-data/dot-files/.config
+ls | xargs -I {} ln -s -b ~/personal-data/dot-files/.config/{} ~/.config/{}

@@ -1,0 +1,11 @@
+sudo apt install -y xorg
+
+sudo add-apt-repository  ppa:klaus-vormweg/awesome -y
+sudo apt update
+sudo apt install awesome -y
+
+mkdir -p ~/.config
+ln -s -b ~/.dot-files/.config/awesome ~/.config/awesome
+ln -s -b ~/.dot-files/.xprofile ~/.xprofile
+
+startx

@@ -1,0 +1,16 @@
+sudo dpkg --add-architecture i386
+
+wget -nc https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+
+sudo apt update
+sudo apt install -y --install-recommends winehq-stable
+echo "If apt-get complains about missing dependencies, install them, then repeat the last two steps (update and install)."
+
+# Install winetricks
+sudo apt install -y cabextract p7zip unrar unzip wget zenity
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O ./winetricks
+chmod +x winetricks
+./winetricks directplay --unattended
+./winetricks steam --unattended

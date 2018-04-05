@@ -1,0 +1,4 @@
+mkdir -p ~/.local/share/kxmlgui5
+cd ~/.local/share/kxmlgui5
+mv konsole konsole~ || true
+ln -s ~/personal-data/dot-files/.local/share/kxmlgui5/konsole konsole

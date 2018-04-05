@@ -1,0 +1,5 @@
+cd /tmp
+wget https://repo.skype.com/latest/skypeforlinux-64.deb -O skype.deb
+sudo dpkg -i skype.deb
+sudo apt -y install
+skypeforlinux

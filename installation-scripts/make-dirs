@@ -1,0 +1,3 @@
+ln -s -b ~/.personal-data/home-directory/Pictures ~/pictures
+ln -s -b ~/.personal-data/home-directory/opt ~/opt
+ln -s -b ~/.home-dir/bin ~/bin

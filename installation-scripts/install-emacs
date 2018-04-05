@@ -1,0 +1,8 @@
+sudo add-apt-repository -y ppa:kelleyk/emacs
+sudo apt-get update
+sudo apt-get install -y emacs25
+
+git clone --recursive https://github.com/DanielVartanov/emacs-starter-kit.git ~/.emacs.d
+echo "export EDITOR=\"emacsclient -a emacs\"" >> ~/.bashrc
+
+# http://emacs.stackexchange.com/questions/2350/how-to-toggle-fullscreen-in-emacs-gui-mode-full-screen-option-is-greyed-out-i

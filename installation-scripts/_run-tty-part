@@ -1,0 +1,28 @@
+# bootstrap:
+# sudo apt-get install -y git && mkdir -p ~/bin &&  git clone https://DanielVartanov@bitbucket.org/DanielVartanov/installation-scripts.git ~/bin/system-installation-scripts
+
+set -v
+set -e
+
+./sudo-without-password
+./ubuntu-update-upgrade
+
+./clone-dot-files
+./configure-git
+
+./move-ssh-keys
+
+./make-dirs
+
+./install-pass
+./install-common-packages
+./install-common-dev-packages
+./install-emacs
+./install-rvm
+./install-heroku-toolbelt
+./install-git-sh
+./install-git-wtf
+./install-postgres
+./install-elixir
+
+./install-awesome

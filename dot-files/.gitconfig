@@ -1,0 +1,14 @@
+[user]
+	name = Daniel Vartanov
+	email = dan@vartanov.net
+
+[alias]
+	delete-merged-branches = "!git branch --merged | grep -v '*' | grep -v master| xargs git branch -d"
+
+[color]
+	sh = auto
+	ui = auto
+[push]
+	default = simple
+[github]
+	user = DanielVartanov

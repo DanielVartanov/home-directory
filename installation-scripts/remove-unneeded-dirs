@@ -1,0 +1,2 @@
+cd ~/
+rmdir Pictures Documents Music Public Templates Videos || true

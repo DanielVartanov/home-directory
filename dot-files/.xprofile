@@ -1,0 +1,5 @@
+xrandr --output HDMI-1 --auto --output DVI-I-1 --auto --right-of HDMI-1
+setxkbmap -layout us,ru -option grp:win_space_toggle -option ctrl:nocaps
+# synclient MaxTapTime=0 
+# synclient VertEdgeScroll=0
+xset r rate 200 45
