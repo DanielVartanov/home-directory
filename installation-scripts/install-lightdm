@@ -4,3 +4,4 @@ sudo apt autoremove
 sudo groupadd -r autologin
 sudo gpasswd -a daniel autologin
 sudo cp 50-autologin-daniel.conf /etc/lightdm/lightdm.conf.d/
+sudo cp 50-user-session-awesome.conf /etc/lightdm/lightdm.conf.d/
