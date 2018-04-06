@@ -1,3 +1,4 @@
+./install-lightdm
 ./remove-unneeded-dirs
 ./install-skype
 ./install-chrome

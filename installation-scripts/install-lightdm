@@ -1,0 +1,6 @@
+sudo apt install -y lightdm
+sudo apt remove -y unity-greeter
+sudo apt autoremove
+sudo groupadd -r autologin
+sudo gpasswd -a daniel autologin
+sudo cp 50-autologin-daniel.conf /etc/lightdm/lightdm.conf.d/
