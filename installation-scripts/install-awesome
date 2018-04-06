@@ -1,3 +1,5 @@
+# Requires `install-emacs` in order to run X server properly (still yet to be investigated)
+
 sudo apt install -y xorg
 
 sudo add-apt-repository ppa:klaus-vormweg/awesome -y
