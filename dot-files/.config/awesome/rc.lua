@@ -73,9 +73,7 @@ beautiful.init(themes_path .. "default/theme.lua")
 beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
-editor = os.getenv("EDITOR") or "editor"
-editor_cmd = terminal .. " -e " .. editor
+terminal = "st -e tmux"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

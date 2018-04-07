@@ -1,5 +1,6 @@
 ./install-lightdm
 ./remove-unneeded-dirs
+./install-st
 ./install-skype
 ./install-chrome
 ./install-dropbox
