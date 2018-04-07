@@ -4,4 +4,5 @@ sudo apt update
 sudo apt install -y google-chrome-stable
 sudo apt -f -y install
 sudo apt install -y google-chrome-stable
+ln -s -b ~/.personal-data/sensitive-dot-files/.config/google-chrome ~/.config/google-chrome
 google-chrome &
