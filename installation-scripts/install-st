@@ -5,6 +5,7 @@ cd st
 mkdir -p patches
 wget -P patches https://st.suckless.org/patches/clipboard/st-clipboard-20180309-c5ba9c0.diff
 git apply patches/*
+cp ~/.home-directory/installation-scripts/st-config.h ./config.h
 
-sudo apt install libxft-dev
+sudo apt install -y libxft-dev
 sudo make clean install
