@@ -327,10 +327,8 @@ globalkeys = awful.util.table.join(
               {description = "open Google Chrome", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "m", function () awful.spawn("emacs-light") end,
               {description = "open light Emacs", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
-              {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+    awful.key({ modkey,           }, "t", function () awful.spawn("/opt/telegram/Telegram") end,
+              {description = "open Telegram", group = "launcher"}),
 
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
