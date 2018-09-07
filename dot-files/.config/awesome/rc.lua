@@ -606,3 +606,7 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.spawn("google-chrome", { tag = "1" })
+awful.spawn("emacs-light", { tag = "3" })
+awful.spawn("emacs", { tag = "4" })
