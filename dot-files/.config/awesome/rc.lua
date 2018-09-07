@@ -72,8 +72,9 @@ local themes_path = awful.util.get_themes_dir()
 beautiful.init(themes_path .. "default/theme.lua")
 beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
 
--- This is used later as the default terminal and editor to run.
+-- This is used later as the default terminal and other apps to run.
 terminal = "st -e tmux"
+telegram = "/opt/telegram/Telegram"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -327,7 +328,7 @@ globalkeys = awful.util.table.join(
               {description = "open Google Chrome", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "m", function () awful.spawn("emacs-light") end,
               {description = "open light Emacs", group = "launcher"}),
-    awful.key({ modkey,           }, "t", function () awful.spawn("/opt/telegram/Telegram") end,
+    awful.key({ modkey, "Shift"   }, "t", function () awful.spawn(telegram) end,
               {description = "open Telegram", group = "launcher"}),
 
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incmwfact( 0.05)          end,
