@@ -1,3 +1,2 @@
-ln -s -b ~/.personal-data/home-directory/Pictures ~/pictures
 ln -s -b ~/.personal-data/sensitive-dot-files/.ssh ~/.ssh
 ln -s -b ~/.home-directory/bin ~/.local/bin
