@@ -5,4 +5,6 @@ cd ${PWD} # Make RVM reactivate when new Konsole tab is opened
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ "
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export EMPIRE_API_URL=https://core-empire.veeqo.com
