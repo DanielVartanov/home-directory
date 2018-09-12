@@ -1,0 +1,9 @@
+sudo apt install -y tmux
+
+git clone --recursive git@github.com:DanielVartanov/.tmux.git ~/.tmux
+ln -s -b ~/.tmux/conf ~/.tmux.conf
+
+cd /tmp
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh

@@ -1,11 +1,13 @@
 ./install-lightdm
 ./remove-unneeded-dirs
+./install-source-code-pro-fonts
 ./install-st
+./install-tmux
 ./install-skype
 ./install-chrome
 ./install-dropbox
 ./install-telegram
-./install-source-code-pro-fonts
+
 ./install-spotify
 
 ./install-steam
