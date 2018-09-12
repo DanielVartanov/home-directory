@@ -1,0 +1,60 @@
+--- init.txt_original	2018-05-04 18:20:40.888953633 +0100
++++ init.txt	2018-05-04 21:01:38.165766354 +0100
+@@ -16,18 +16,18 @@
+ 
+ Change this to skip the wonderful intro movies.
+ 
+-[INTRO:YES]
++[INTRO:NO]
+ 
+ This lets you set the starting windowed/fullscreen setting.  Can be YES, NO or PROMPT.
+ 
+-[WINDOWED:YES]
++[WINDOWED:NO]
+ 
+ This is the size and font for windowed mode.  Changing to the 800x600 font might make you happier.
+ If set below 256x256 it specifies the grid size instead, with a minimum of 80x25.
+ 
+ [WINDOWEDX:80]
+ [WINDOWEDY:25]
+-[FONT:curses_640x300.png]
++[FONT:Md_curses_16x16.png]
+ 
+ You may disable window resizing if you wish.
+ [RESIZABLE:YES]
+@@ -36,7 +36,7 @@
+ 
+ [FULLSCREENX:0]
+ [FULLSCREENY:0]
+-[FULLFONT:curses_800x600.png]
++[FULLFONT:Md_curses_16x16.png]
+ 
+ If this is set to NO, tiles will be stretched to fit the screen if there is a resolution mismatch.
+ If this is set to YES, the tiles will not be stretched, but rather the game view will be centralized, surrounded by black space.  Tiles that are too large will always be compressed rather than running off the screen.
+@@ -48,10 +48,10 @@
+ [GRAPHICS:NO]
+ [GRAPHICS_WINDOWEDX:0]
+ [GRAPHICS_WINDOWEDY:0]
+-[GRAPHICS_FONT:curses_square_16x16.png]
++[GRAPHICS_FONT:Md_curses_16x16.png]
+ [GRAPHICS_FULLSCREENX:0]
+ [GRAPHICS_FULLSCREENY:0]
+-[GRAPHICS_FULLFONT:curses_square_16x16.png]
++[GRAPHICS_FULLFONT:Md_curses_16x16.png]
+ [GRAPHICS_BLACK_SPACE:YES]
+ 
+ These settings can have a significant impact on frame rate, especially for people that have slow frame rates on the title screen.  Available modes are 2D, 2DSW, 2DASYNC, STANDARD, PARTIAL:<number>, ACCUM_BUFFER, FRAME_BUFFER and VBO. The number after PARTIAL refers to how many frames it will redo a printed tile before skipping it, so you might try increasing it a bit if you have flickering when PARTIAL is set.  Please note that any of these combinations might cause frame rates to drop significantly or cause unpleasant side effects like flickering.
+@@ -126,11 +126,11 @@
+ 
+ This controls the number of milliseconds that must pass before a held key sends an initial repeat press to the game.  You might need to adjust this.
+ 
+-[KEY_HOLD_MS:250]
++[KEY_HOLD_MS:165]
+ 
+ This controls the number of milliseconds that must pass before a held key sends a repeat press to the game after the repeat process has begun.
+ 
+-[KEY_REPEAT_MS:150]
++[KEY_REPEAT_MS:45]
+ 
+ If you set KEY_REPEAT_ACCEL_LIMIT above one, then after KEY_REPEAT_ACCEL_START repetitions the repetition delay will smoothly decrease until repetition is this number of times faster than at the start.
+ 

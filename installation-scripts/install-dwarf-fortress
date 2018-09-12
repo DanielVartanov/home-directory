@@ -1,10 +1,20 @@
-sudo apt install -y libsdl1.2debian libsdl-image1.2 libSDL-ttf2.0-0
-mkdir -p ~/opt
-cd ~/opt
+sudo apt install -y libsdl1.2debian libsdl-image1.2 libSDL-ttf2.0-0 libopenal1
+mkdir -p ~/.opt
+cd ~/.opt
 
-wget http://www.bay12games.com/dwarves/df_44_09_linux.tar.bz2  -O df_linux.tar.bz2
-tar xjf df_linux.tar.bz2
-rm df_linux.tar.bz2
+wget http://www.bay12games.com/dwarves/df_44_12_linux.tar.bz2 -O df.tar.bz2
+tar xjf df.tar.bz2
+mv df_linux df
+rm df.tar.bz2
+cd df
+
+cp ~/.home-directory/installation-scripts/Md_curses_16x16.png data/art/
+
+patch data/init/init.txt ~/.home-directory/installation-scripts/df-init.txt.diff
+
+wget https://github.com/DFHack/dfhack/releases/download/0.44.12-r1/dfhack-0.44.12-r1-Linux-64-gcc-4.8.tar.bz2 -O dfhack.tar.bz2
+tar xjf dfhack.tar.bz2 -C df
+rm dfhack.tar.bz2
 
 sudo apt install -y qt5-qmake qtbase5-dev qtbase5-dev-tools qtdeclarative5-dev
 sudo apt install -y texlive-latex-extra
