@@ -8,5 +8,4 @@ synclient VertEdgeScroll=0
 synclient VertTwoFingerScroll=1
 synclient HorizTwoFingerScroll=1
 xset r rate 165 45
-xinput set-prop 13 "Synaptics Tap Action" 0
-xinput --set-prop "MOSART Semi. 2.4G Wireless Mouse" "Device Accel Constant Deceleration"  1.5
+# xinput --set-prop "MOSART Semi. 2.4G Wireless Mouse" "Device Accel Constant Deceleration"  1.5
