@@ -5,6 +5,7 @@
 set -v
 set -e
 
+./apply-laptop-brightness-fix
 ./make-dirs
 ./sudo-without-password
 ./ubuntu-update-upgrade
