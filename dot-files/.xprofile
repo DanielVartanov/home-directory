@@ -1,4 +1,3 @@
-xrandr --output eDP1 --mode 1920x1080 --output DP2 --auto --left-of eDP1
 setxkbmap -layout us,ru -option grp:win_space_toggle -option ctrl:nocaps
 synclient MaxTapTime=0
 synclient TapButton1=0
@@ -8,4 +7,5 @@ synclient VertEdgeScroll=0
 synclient VertTwoFingerScroll=1
 synclient HorizTwoFingerScroll=1
 xset r rate 165 45
-# xinput --set-prop "MOSART Semi. 2.4G Wireless Mouse" "Device Accel Constant Deceleration"  1.5
+redshift -l 51.6417173:-4.0268903 -b 0.6 &
+dropbox start &
