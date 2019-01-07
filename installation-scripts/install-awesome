@@ -6,6 +6,20 @@ sudo add-apt-repository ppa:klaus-vormweg/awesome -y
 sudo apt update
 sudo apt install awesome -y
 
+# Install Lua package manager
+cd /tmp
+sudo apt install -y liblua5.3-dev
+wget https://luarocks.org/releases/luarocks-3.0.4.tar.gz
+tar zxpf luarocks-3.0.4.tar.gz
+cd luarocks-3.0.4
+./configure
+sudo make bootstrap
+sudo make install
+
+# Install dependencies for battery widget
+sudo apt install -y libgirepository1.0-dev
+sudo luarocks install upower_dbus
+
 mkdir -p ~/.config
 ln -s -b ~/.home-directory/dot-files/.config/awesome ~/.config/awesome
 ln -s -b ~/.home-directory/dot-files/.xprofile ~/.xprofile

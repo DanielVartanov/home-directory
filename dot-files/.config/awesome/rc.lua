@@ -147,6 +147,41 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Battery widget
+-- see https://github.com/stefano-m/awesome-power_widget/blob/master/power_widget.lua
+--   for better code and edge cases (but mind you, that code needs to be changed to show text instead of images)
+local upower = require("upower_dbus")
+battery_widget = wibox.widget.textbox()
+
+-- TODO: extract this into a luarocks package
+-- Make it red when power is low (use `markup` property instead of `text`)
+-- TODO: use `naughty` to notify about a critically low power level
+function battery_widget:update()
+   self.battery:update_mappings()
+
+   widget_text = math.floor(self.battery.Percentage) .. "%"
+
+   if self.battery.state ~= upower.enums.BatteryState.Discharging then
+      widget_text = "⚡" .. widget_text
+   end
+
+   self.text = widget_text
+end
+
+function battery_widget:init()
+   self.battery = upower.Manager.devices[2]
+
+   self.battery:on_properties_changed(
+      function ()
+         self:update()
+      end
+   )
+
+   self:update()
+end
+
+battery_widget:init()
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -244,6 +279,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            battery_widget,
             mytextclock,
             s.mylayoutbox,
         },
