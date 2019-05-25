@@ -8,7 +8,7 @@ sudo apt install awesome -y
 
 # Install Lua package manager
 cd /tmp
-sudo apt install -y liblua5.3-dev
+sudo apt install -y lua5.3 liblua5.3-dev
 wget https://luarocks.org/releases/luarocks-3.0.4.tar.gz
 tar zxpf luarocks-3.0.4.tar.gz
 cd luarocks-3.0.4
