@@ -12,3 +12,5 @@
 	default = simple
 [github]
 	user = DanielVartanov
+[merge]
+	conflictstyle = diff3
