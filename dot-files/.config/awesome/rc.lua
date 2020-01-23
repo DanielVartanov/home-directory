@@ -146,6 +146,8 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+month_calendar = awful.widget.calendar_popup.month()
+month_calendar:attach(mytextclock, "tr")
 
 -- Battery widget
 -- see https://github.com/stefano-m/awesome-power_widget/blob/master/power_widget.lua
