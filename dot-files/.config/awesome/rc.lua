@@ -514,6 +514,21 @@ for i = 1, 9 do
     )
 end
 
+-- Initiate a client, save it, do not spawn another one if Pressed is fired again, delete a client when Released is fired
+-- TODO:  save the client between key-presses and even spawn it on boot up, only hide and unhide it upon keypresses
+local htop_window_pid = nil
+globalkeys = awful.util.table.join(globalkeys, awful.key.new({ modkey, "Shift" }, "h",
+                                      function ()
+                                         if htop_window_pid == nil then
+                                            htop_window_pid = awful.spawn("st htop")
+                                         end
+                                      end,
+                                      function ()
+                                         awful.spawn("kill -s TERM " .. htop_window_pid)
+                                         htop_window_pid = nil
+                                      end
+))
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
