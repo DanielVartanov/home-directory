@@ -73,7 +73,7 @@ beautiful.init(themes_path .. "default/theme.lua")
 beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
 
 -- This is used later as the default terminal and other apps to run.
-terminal = "st -e tmux"
+terminal = "st tmux"
 telegram = "/opt/telegram/Telegram"
 
 -- Default modkey.
