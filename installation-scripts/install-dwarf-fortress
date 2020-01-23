@@ -11,9 +11,8 @@ cd df
 cp ~/.home-directory/installation-scripts/Md_curses_16x16.png data/art/
 
 patch data/init/init.txt ~/.home-directory/installation-scripts/df-init.txt.diff
-
-wget https://github.com/DFHack/dfhack/releases/download/0.44.12-r1/dfhack-0.44.12-r1-Linux-64-gcc-4.8.tar.bz2 -O dfhack.tar.bz2
-tar xjf dfhack.tar.bz2 -C df
+wget https://github.com/DFHack/dfhack/releases/download/0.44.12-r3/dfhack-0.44.12-r3-Linux-64-gcc-4.8.tar.bz2 -O dfhack.tar.bz2
+tar xjf dfhack.tar.bz2
 rm dfhack.tar.bz2
 
 sudo apt install -y qt5-qmake qtbase5-dev qtbase5-dev-tools qtdeclarative5-dev
