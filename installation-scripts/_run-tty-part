@@ -1,6 +1,8 @@
-# bootstrap:
+# bootstrap (do these steps manually:
+# sudo apt install git
 # git clone https://github.com/DanielVartanov/home-directory.git ~/.home-directory
 # copy personal-data to ~/.personal-data
+# end of bootstrap
 
 set -v
 set -e
