@@ -12,5 +12,6 @@ fi
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ "
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export EMPIRE_API_URL=https://core-empire.veeqo.com
-
 export PATH="$HOME/.cargo/bin:$PATH"
+
+alias cal="cal -3 -N -M -C"
