@@ -1,3 +1,4 @@
+# ! btsync is a proprietary protocol (proof https://en.wikipedia.org/wiki/Resilio_Sync), consider using Syncthing instead
 sudo add-apt-repository -y ppa:tuxpoldo/btsync
 sudo apt-get update
 sudo apt-get install -y btsync
