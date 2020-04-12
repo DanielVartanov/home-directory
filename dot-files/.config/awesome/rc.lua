@@ -516,6 +516,8 @@ end
 
 -- Initiate a client, save it, do not spawn another one if Pressed is fired again, delete a client when Released is fired
 -- TODO:  save the client between key-presses and even spawn it on boot up, only hide and unhide it upon keypresses
+--        alternative: make htop run in a tmux session so that you only boot a terminal window and a tmux client
+--          as hiding/unhiding might be possible only in a single desktop tag or a screen
 local htop_window_pid = nil
 globalkeys = awful.util.table.join(globalkeys, awful.key.new({ modkey, "Shift" }, "h",
                                       function ()
