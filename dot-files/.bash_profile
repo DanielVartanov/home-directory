@@ -17,3 +17,4 @@ export PATH="/usr/local/go/bin:$PATH"
 export HISTFILESIZE=10000000
 
 alias cal="cal -3 -N -M -C"
+alias watch="watch -n0.2"
