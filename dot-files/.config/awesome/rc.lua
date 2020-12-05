@@ -74,7 +74,6 @@ beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
 
 -- This is used later as the default terminal and other apps to run.
 terminal = "st tmux"
-telegram = "/opt/telegram/Telegram"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -363,8 +362,6 @@ globalkeys = awful.util.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey,           }, "v", function () awful.spawn("google-chrome") end,
               {description = "open Google Chrome", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "t", function () awful.spawn(telegram) end,
-              {description = "open Telegram", group = "launcher"}),
 
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
