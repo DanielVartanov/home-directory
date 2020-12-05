@@ -15,6 +15,7 @@ export EMPIRE_API_URL=https://core-empire.veeqo.com
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export HISTFILESIZE=10000000
+export EDITOR="emacs --quick"
 
 alias cal="cal -3 -N -M -C"
 alias watch="watch -n0.2"
