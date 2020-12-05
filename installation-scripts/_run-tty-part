@@ -10,6 +10,7 @@ set -e
 ./apply-laptop-brightness-fix
 ./make-dirs
 ./sudo-without-password
+./ubuntu-add-all-repositories
 ./ubuntu-update-upgrade
 ./configure-git
 ./install-pass
