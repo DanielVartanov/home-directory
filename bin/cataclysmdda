@@ -1,1 +1,1 @@
-~/.opt/vanilla-st/st -e ~/.opt/cataclysmdda/cataclysm-launcher
+~/.opt/vanilla-st/st ~/.opt/cataclysmdda/cataclysm-launcher
