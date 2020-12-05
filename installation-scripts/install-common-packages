@@ -1,1 +1,1 @@
-sudo apt install -y nethogs httpie mc curl wget htop sysstat virtualbox dsniff xclip ncdu tree tmux exfat-fuse exfat-utils whois unrar cups cups-client upower jq
+sudo apt install -y ubuntu-restricted-extras nethogs httpie mc curl wget htop sysstat virtualbox dsniff xclip ncdu tree tmux exfat-fuse exfat-utils whois unrar cups cups-client upower jq

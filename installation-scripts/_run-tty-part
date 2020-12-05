@@ -13,8 +13,8 @@ set -e
 ./ubuntu-add-all-repositories
 ./ubuntu-update-upgrade
 ./configure-git
-./install-pass
 ./install-common-packages
+./install-pass
 ./install-common-dev-packages
 ./install-emacs
 ./install-rvm
