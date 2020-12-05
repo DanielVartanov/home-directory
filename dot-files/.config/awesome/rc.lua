@@ -662,4 +662,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn("google-chrome", { tag = "1" })
 awful.spawn("emacs-light", { tag = "3" })
-awful.spawn("emacs", { tag = "4" })
+awful.spawn("emacs --fullscreen", { tag = "4" })
