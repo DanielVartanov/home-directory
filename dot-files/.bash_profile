@@ -18,4 +18,4 @@ export HISTFILESIZE=10000000
 export EDITOR="emacs --quick"
 
 alias cal="cal -3 -N -M -C"
-alias watch="watch -n0.2"
+alias watch="watch --differences --color --interval 0.2 unbuffer"
