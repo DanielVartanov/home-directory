@@ -22,6 +22,5 @@ set -e
 ./install-git-sh
 ./install-git-wtf
 ./install-postgres
-./install-elixir
 
 ./install-awesome
