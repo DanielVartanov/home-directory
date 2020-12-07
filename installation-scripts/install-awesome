@@ -1,27 +1,27 @@
 # Requires `install-emacs` in order to run X server properly (still yet to be investigated)
 
 sudo apt install -y xorg
-
-sudo add-apt-repository ppa:klaus-vormweg/awesome -y
-sudo apt update
-sudo apt install awesome -y
+sudo apt install -y awesome
 
 # Install Lua package manager
+sudo apt install -y lua5.3 liblua5.3-dev build-essential libreadline-dev
+
 cd /tmp
-sudo apt install -y lua5.3 liblua5.3-dev
-wget https://luarocks.org/releases/luarocks-3.0.4.tar.gz
-tar zxpf luarocks-3.0.4.tar.gz
-cd luarocks-3.0.4
+wget https://luarocks.github.io/luarocks/releases/luarocks-3.4.0.tar.gz
+tar zxpf luarocks-3.4.0.tar.gz
+cd luarocks-3.4.0
 ./configure
-sudo make bootstrap
+make
 sudo make install
 
-# Install dependencies for battery widget
+# Install dependencies for the battery widget
 sudo apt install -y libgirepository1.0-dev
 sudo luarocks install upower_dbus
 
+# Configure AwesomeWM
 mkdir -p ~/.config
 ln -s -b ~/.home-directory/dot-files/.config/awesome ~/.config/awesome
 ln -s -b ~/.home-directory/dot-files/.xprofile ~/.xprofile
 
+# Run it straight away
 startx
