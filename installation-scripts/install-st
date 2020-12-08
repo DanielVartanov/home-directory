@@ -1,11 +1,16 @@
-mkdir -p ~/src
-cd ~/src
+cd /tmp
 git clone git://git.suckless.org/st
 cd st
-mkdir -p patches
-wget -P patches https://st.suckless.org/patches/clipboard/st-clipboard-20180309-c5ba9c0.diff
-cp ~/.home-directory/installation-scripts/st-config.def.h.diff ./patches/
-git apply patches/*
+git checkout 0.8.2
+
+wget https://st.suckless.org/patches/clipboard/st-clipboard-0.8.3.diff
+git apply st-clipboard-0.8.3.diff
+
+wget https://st.suckless.org/patches/nordtheme/st-nordtheme-0.8.2.diff
+git apply st-nordtheme-0.8.2.diff
+
+cp ~/.home-directory/installation-scripts/st-config.def.h.diff ./
+git apply st-config.def.h.diff
 
 sudo apt install -y libxft-dev
 sudo make clean install
