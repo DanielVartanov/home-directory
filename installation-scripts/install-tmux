@@ -1,8 +1,16 @@
-sudo apt install -y tmux
+sudo apt install -y libevent-dev ncurses-dev build-essential bison pkg-config
 
-git clone --recursive git@github.com:DanielVartanov/.tmux.git ~/.tmux
-ln -s -b ~/.tmux/conf ~/.tmux.conf
+wget https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a.tar.gz
+tar -zxf tmux-3.0a.tar.gz
+cd tmux-3.0a/
+./configure
+make -j8 && sudo make install
 
+mkdir -p ~/.config
+git clone --recursive git@github.com:DanielVartanov/.tmux.git ~/.config/tmux
+ln -s -b ~/.config/tmux/tmux.conf ~/.tmux.conf  # Remove this line after upgrading to tmux 3.2 (as it will look at ~/.config/tmux/tmux.conf by default)
+
+# Allow displaying special characters we use in tmux status line
 cd /tmp
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
