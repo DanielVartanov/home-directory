@@ -1,7 +1,6 @@
-sudo add-apt-repository -y ppa:atareao/telegram
-sudo apt update
-sudo apt install -y telegram
-sudo apt install -f -y
-sudo apt install -y telegram
+wget -O tsetup.tar.xz https://telegram.org/dl/desktop/linux
+tar -xf tsetup.tar.xz
 
+cp Telegram/Telegram ~/.local/bin/
 ln -s -b ~/.personal-data/sensitive-dot-files/.TelegramDesktop ~/.TelegramDesktop
+Telegram &
