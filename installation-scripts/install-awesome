@@ -24,6 +24,3 @@ sudo luarocks install upower_dbus
 mkdir -p ~/.config
 ln -s -b ~/.home-directory/dot-files/.config/awesome ~/.config/awesome
 ln -s -b ~/.home-directory/dot-files/.xprofile ~/.xprofile
-
-# Run it straight away
-startx
