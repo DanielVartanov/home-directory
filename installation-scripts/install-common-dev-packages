@@ -1,1 +1,1 @@
-sudo apt install -y libxml2 libxslt-dev libqt4-dev libpq-dev imagemagick graphviz redis-server redis-tools libgmp3-dev build-essential clang llvm
+sudo apt install -y libxml2 libxslt-dev libpq-dev imagemagick graphviz redis-server redis-tools libgmp3-dev build-essential clang llvm
