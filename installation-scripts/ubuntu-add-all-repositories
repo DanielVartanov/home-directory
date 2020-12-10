@@ -1,3 +1,5 @@
+set -e
+
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 sudo add-apt-repository restricted

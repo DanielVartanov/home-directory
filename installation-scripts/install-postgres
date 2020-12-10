@@ -1,3 +1,5 @@
+set -e
+
 sudo apt install -y postgresql
 sudo -u postgres createuser --superuser --no-password daniel
 createdb daniel

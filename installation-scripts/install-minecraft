@@ -1,3 +1,5 @@
+set -e
+
 cd ~/opt
 wget https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
 java -jar Minecraft.jar

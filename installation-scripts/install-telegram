@@ -1,3 +1,5 @@
+set -e
+
 wget -O tsetup.tar.xz https://telegram.org/dl/desktop/linux
 tar -xf tsetup.tar.xz
 

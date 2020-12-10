@@ -1,3 +1,5 @@
+set -e
+
 sudo apt install -y pass
 
 ln -s -b ~/.personal-data/sensitive-dot-files/.password-store ~/.password-store

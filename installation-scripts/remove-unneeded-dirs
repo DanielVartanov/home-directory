@@ -1,2 +1,4 @@
+set -e
+
 cd ~/
 rmdir Desktop Pictures Documents Music Public Templates Videos || true

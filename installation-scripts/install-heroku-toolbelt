@@ -1,2 +1,4 @@
+set -e
+
 wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 ln -s -b ~/.personal-data/sensitive-dot-files/.netrc ~/.netrc
