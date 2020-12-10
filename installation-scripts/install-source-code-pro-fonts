@@ -1,5 +1,5 @@
 cd /tmp
-wget -O font.tar.gz https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz
-tar -zxf font.tar.gz
-sudo cp /tmp/source-code-pro-1.017R/TTF/* /usr/share/fonts/
+wget -O font.zip https://github.com/adobe-fonts/source-code-pro/releases/download/2.032R-ro%2F1.052R-it%2F1.012R-VAR/TTF-source-code-pro-2.032R-ro-1.052R-it.zip
+unzip font.zip
+sudo cp TTF/* /usr/share/fonts/
 sudo fc-cache
