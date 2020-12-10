@@ -5,8 +5,8 @@
 # end of bootstrap
 
 set -e
+set -x
 
-./apply-laptop-brightness-fix
 ./make-dirs
 ./sudo-without-password
 ./ubuntu-add-all-repositories
