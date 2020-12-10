@@ -23,4 +23,8 @@ set -e
 ./install-git-wtf
 ./install-postgres
 
+./install-source-code-pro-fonts
+./install-st
+./install-tmux
+
 ./install-awesome
