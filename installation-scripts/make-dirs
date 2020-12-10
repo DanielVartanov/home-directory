@@ -1,4 +1,5 @@
-ln -s -b ~/.personal-data/sensitive-dot-files/.ssh ~/.ssh
+mv ~/.ssh ~/.ssh~
+ln -s ~/.personal-data/sensitive-dot-files/.ssh ~/.ssh
 mkdir -p ~/.local
 ln -s -b ~/.home-directory/bin ~/.local/bin
 mkdir -p ~/src
