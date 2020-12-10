@@ -1,17 +1,15 @@
+set -v
+set -e
+
 ./install-lightdm
 ./remove-unneeded-dirs
-./install-source-code-pro-fonts
-./install-st
-./install-tmux
-./install-skype
+./install-flatpak
+./install-common-apps
 ./install-chrome
 ./install-dropbox
 ./install-telegram
-
-./install-spotify
-
-./install-steam
 ./install-dwarf-fortress
+./install-cataclysm-dda
 ./install-java
 ./install-minecraft
 ./install-wine
