@@ -1,17 +1,16 @@
 sudo dpkg --add-architecture i386
 
-wget -nc https://dl.winehq.org/wine-builds/Release.key
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
-sudo apt-key add Release.key
-sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' # Mind `focal`, it's bound to Ubuntu 20.04
 
 sudo apt update
 sudo apt install -y --install-recommends winehq-stable
-echo "If apt-get complains about missing dependencies, install them, then repeat the last two steps (update and install)."
+# If apt-get complains about missing dependencies, install them, then repeat the last two steps (update and install).s
 
 # Install winetricks
-sudo apt install -y cabextract p7zip unrar unzip wget zenity
+cd /tmp
+sudo apt install -y cabextract p7zip unrar unzip wget
 wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O ./winetricks
 chmod +x winetricks
 ./winetricks directplay --unattended
