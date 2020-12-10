@@ -1,7 +1,7 @@
 set -v
 set -e
 
-./install-lightdm
+
 ./remove-unneeded-dirs
 ./install-flatpak
 ./install-common-apps
