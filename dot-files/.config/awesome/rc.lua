@@ -148,6 +148,42 @@ mytextclock = wibox.widget.textclock()
 month_calendar = awful.widget.calendar_popup.month()
 month_calendar:attach(mytextclock, "tr")
 
+-- Blood glucose widget
+
+blood_glucose_widget = wibox.widget.textbox()
+
+-- TODO: extract this into a luarocks package
+-- TODO: Make it red when BG is low (use `markup` property instead of `text`)
+-- TODO: use `naughty` to notify about a critically low BG level or predicted low
+function blood_glucose_widget:update()
+   --      json = JSON.parse(HTTP.get('https://dacheenightscout.herokuapp.com/api/v1/entries.json').body.to_s); 1
+   --      puts json.map { |entry| [entry["sgv"], entry["delta"]] }.map { |sgv, delta| [sgv, delta].map { |number| number / 18.0 } }.map(&:inspect)
+
+   --[[
+   widget_text = math.floor(self.blood_glocuse.Percentage) .. "%"
+
+   if self.blood_glocuse.state ~= upower.enums.Blood_GlocuseState.Discharging then
+      widget_text = "⚡" .. widget_text
+   end
+
+   self.text = widget_text
+   --]]
+end
+
+function blood_glucose_widget:init()
+   --[[ on_1_minute_timer(
+      function ()
+         self:update()
+      end
+   )
+   --]]
+
+   -- self:update()
+end
+
+-- blood_glocuse_widget:init()
+
+
 -- Battery widget
 -- see https://github.com/stefano-m/awesome-power_widget/blob/master/power_widget.lua
 --   for better code and edge cases (but mind you, that code needs to be changed to show text instead of images)
@@ -279,6 +315,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            -- blood_glucose_widget,
             mykeyboardlayout,
             battery_widget,
             mytextclock,
