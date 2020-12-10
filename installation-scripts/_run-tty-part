@@ -26,5 +26,6 @@ set -e
 ./install-source-code-pro-fonts
 ./install-st
 ./install-tmux
+./install-fzf
 
 ./install-awesome
