@@ -30,4 +30,4 @@ set -x
 ./install-awesome
 ./install-lightdm
 
-echo "All done, type 'startx' when you are ready"
+echo "All done, reboot when you are ready"
