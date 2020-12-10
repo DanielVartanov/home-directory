@@ -1,6 +1,5 @@
-set -v
 set -e
-
+set -x
 
 ./remove-unneeded-dirs
 ./install-flatpak
