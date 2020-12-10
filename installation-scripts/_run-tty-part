@@ -1,6 +1,6 @@
 # bootstrap (do these steps manually):
 # sudo apt install git
-# git clone --depth=1 https://github.com/DanielVartanov/home-directory.git ~/.home-directory
+# git clone --depth=1 --recursive https://github.com/DanielVartanov/home-directory.git ~/.home-directory
 # copy personal-data to ~/.personal-data
 # end of bootstrap
 
