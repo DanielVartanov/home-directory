@@ -17,6 +17,7 @@ make
 sudo make install
 
 # Install dependencies for the battery widget
+cd ~/  # It is crucial to exit /tmp/luarocks dir, otherwise all dependencies get installed there
 sudo apt install -y libgirepository1.0-dev
 sudo luarocks install upower_dbus
 
