@@ -155,7 +155,7 @@ local upower = require("upower_dbus")
 battery_widget = wibox.widget.textbox()
 
 -- TODO: extract this into a luarocks package
--- Make it red when power is low (use `markup` property instead of `text`)
+-- TODO: Make it red when power is low (use `markup` property instead of `text`)
 -- TODO: use `naughty` to notify about a critically low power level
 function battery_widget:update()
    self.battery:update_mappings()
