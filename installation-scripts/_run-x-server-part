@@ -4,11 +4,11 @@ set -x
 ./remove-unneeded-dirs
 ./install-flatpak
 ./install-common-apps
+./install-steam
 ./install-chrome
 ./install-dropbox
 ./install-telegram
 ./install-dwarf-fortress
 ./install-cataclysm-dda
-./install-java
 ./install-minecraft
 ./install-wine
