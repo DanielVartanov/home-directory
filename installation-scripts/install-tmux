@@ -2,6 +2,7 @@ set -e
 
 sudo apt install -y libevent-dev ncurses-dev build-essential bison pkg-config
 
+cd /tmp
 wget https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a.tar.gz
 tar -zxf tmux-3.0a.tar.gz
 cd tmux-3.0a/
