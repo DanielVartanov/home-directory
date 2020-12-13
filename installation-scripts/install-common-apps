@@ -5,3 +5,5 @@ skype
 
 sudo snap install spotify
 spotify &
+
+sudo apt install -y xserver-xorg-input-synaptics
