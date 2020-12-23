@@ -10,6 +10,7 @@
 set -e
 set -x
 
+./set-grub-resolution
 ./make-dirs
 ./sudo-without-password
 ./ubuntu-add-all-repositories
