@@ -23,6 +23,7 @@ set -x
 ./install-heroku-toolbelt
 ./install-git-sh
 ./install-git-wtf
+./switch-this-repo-to-ssh-remote
 ./install-postgres
 
 ./install-source-code-pro-fonts
