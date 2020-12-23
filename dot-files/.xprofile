@@ -11,3 +11,4 @@ synclient HorizTwoFingerScroll=1
 xset r rate 165 45
 redshift -l 51.6417173:-4.0268903 -b 1.0 &
 dropbox start &
+udiskie --no-notify &
