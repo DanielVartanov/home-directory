@@ -1,8 +1,11 @@
-# bootstrap (do these steps manually):
-# sudo apt install git
-# git clone --recursive https://github.com/DanielVartanov/home-directory.git ~/.home-directory
-# copy personal-data to ~/.personal-data
-# end of bootstrap
+# Do these steps manually:
+# 1. `sudo apt install git`
+# 2. `git clone --recursive https://github.com/DanielVartanov/home-directory.git ~/.home-directory`
+# 3. copy personal-data to ~/.personal-data
+#      if you are copying .personal-data from a FAT32-formatted flash drive, then change permissions of all keys in `.ssh` to 600
+# 4. `sudo dpkg-reconfigure console-setup`
+       Choose UTF-8, choose "combined cyrillic slavic and non-slavic", most importantly choose Terminus font and the maximum font size (usually marked as "framebuffer")
+# 5. Run this script
 
 set -e
 set -x
