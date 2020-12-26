@@ -8,7 +8,7 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export HISTFILESIZE=10000000
 export EDITOR="emacs --quick"
 
-alias cal="cal -3 -N -M -C"
+alias cal="ncal -3 -M -b"
 alias watch="watch --differences --color --interval 0.2 unbuffer"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
