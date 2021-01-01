@@ -73,7 +73,8 @@ beautiful.init(themes_path .. "default/theme.lua")
 beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
 
 -- This is used later as the default terminal and other apps to run.
-terminal = "st tmux"
+terminal_cmd = "st tmux"
+chrome_cmd = "google-chrome --force-device-scale-factor=1.75"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -127,7 +128,7 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open terminal", terminal }
+                                    { "open terminal", terminal_cmd }
                                   }
                         })
 
@@ -135,7 +136,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = terminal_cmd -- Set the terminal for applications that require it
 menubar.menu_gen.lookup_category_icons = function() end
 -- }}}
 
@@ -358,9 +359,9 @@ globalkeys = awful.util.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "c", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "c", function () awful.spawn(terminal_cmd) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey,           }, "v", function () awful.spawn("google-chrome") end,
+    awful.key({ modkey,           }, "v", function () awful.spawn(chrome_cmd) end,
               {description = "open Google Chrome", group = "launcher"}),
 
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -657,6 +658,6 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn("google-chrome", { tag = "1" })
+awful.spawn(chrome_cmd, { tag = "1" })
 awful.spawn("emacs-light", { tag = "3" })
 awful.spawn("emacs --fullscreen", { tag = "4" })
