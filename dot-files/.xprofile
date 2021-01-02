@@ -1,4 +1,4 @@
-xrandr && xrandr --output eDP-1 --mode 1920x1080
+xrandr && xrandr --output eDP-1 --mode 3840x2160 --dpi 192
 
 setxkbmap -layout us,ru -option grp:win_space_toggle -option ctrl:nocaps
 synclient MaxTapTime=0

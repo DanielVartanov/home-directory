@@ -71,10 +71,11 @@ end
 local themes_path = awful.util.get_themes_dir()
 beautiful.init(themes_path .. "default/theme.lua")
 beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
+beautiful.xresources.set_dpi(192)
 
 -- This is used later as the default terminal and other apps to run.
 terminal_cmd = "st tmux"
-chrome_cmd = "google-chrome --force-device-scale-factor=1.75"
+chrome_cmd = "google-chrome --force-device-scale-factor=2.0"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
