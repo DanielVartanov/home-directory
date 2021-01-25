@@ -8,6 +8,7 @@ set -x
 ./install-chrome
 ./install-dropbox
 ./install-telegram
+./install-discord
 ./install-dwarf-fortress
 ./install-cataclysm-dda
 ./install-minecraft
