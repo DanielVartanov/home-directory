@@ -32,6 +32,7 @@ set -x
 ./install-tmux
 ./install-fzf
 ./install-bat
+./install-lf
 
 ./install-awesome
 ./install-lightdm
