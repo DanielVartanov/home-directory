@@ -1,0 +1,5 @@
+set -e
+
+cd /tmp
+wget -O trezor-bridge.deb https://wallet.trezor.io/data/bridge/2.0.27/trezor-bridge_2.0.27_amd64.deb
+sudo dpkg -i trezor-bridge.deb

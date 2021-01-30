@@ -34,6 +34,8 @@ set -x
 ./install-bat
 ./install-lf
 
+./install-trezor
+
 ./install-awesome
 ./install-lightdm
 
