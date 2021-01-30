@@ -11,10 +11,10 @@ cd cataclysmdda
 mkdir config
 ln -s ~/.home-directory/installation-scripts/cataclysmdda/options.json ./config/options.json
 
-cd ~/.personal-data/savegames/cataclysmdda
+cd ~/Dropbox/savegames/cataclysmdda
 cp -R save "save.bak.`date +%F`"  # backup the savegame in case the new version of Cataclysm spoils the save (it happens a lot)
 cd -
-ln -s ~/.personal-data/savegames/cataclysmdda/save ./save
+ln -s ~/Dropbox/savegames/cataclysmdda/save ./save
 
 cd ~/.opt
 git clone git://git.suckless.org/st vanilla-st
