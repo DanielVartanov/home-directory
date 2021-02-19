@@ -4,4 +4,6 @@ cd /tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 ln -s -b ~/.personal-data/sensitive-dot-files/.config/google-chrome ~/.config/google-chrome
+sudo cp ~/.home-directory/installation-scripts/google-chrome.desktop /usr/share/applications/
+xdg-settings set default-web-browser google-chrome.desktop
 google-chrome &

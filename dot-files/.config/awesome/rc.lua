@@ -75,7 +75,7 @@ beautiful.xresources.set_dpi(192)
 
 -- This is used later as the default terminal and other apps to run.
 terminal_cmd = "st tmux"
-chrome_cmd = "google-chrome --force-device-scale-factor=2.0"
+chrome_cmd = "google-chrome"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
