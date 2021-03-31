@@ -1,0 +1,6 @@
+set -e
+
+cd /tmp
+git clone https://github.com/jez/as-tree
+cd as-tree
+make install

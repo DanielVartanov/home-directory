@@ -33,6 +33,7 @@ set -x
 ./install-fzf
 ./install-bat
 ./install-lf
+./install-as-tree
 
 ./install-trezor
 
