@@ -7,9 +7,12 @@ ln -s -b ~/.personal-data/sensitive-dot-files/.password-store ~/.password-store
 gpg --import ~/.personal-data/gnupg-keys/secret-gpg.key
 gpg --import-ownertrust ~/.personal-data/gnupg-keys/ownertrust-gpg.txt
 
-
 # Install pass-update extension
 wget -qO - https://pkg.pujol.io/debian/gpgkey | sudo apt-key add -
 echo 'deb https://pkg.pujol.io/debian/repo all main' | sudo tee /etc/apt/sources.list.d/pkg.pujol.io.list
 sudo apt update
 sudo apt install pass-extension-update
+
+# Install a pinentry app which is a bit faster
+sudo apt install -y pinentry-qt
+sudo update-alternatives --set pinentry /usr/bin/pinentry-qt
