@@ -2,6 +2,7 @@ set -e
 set -x
 
 ./remove-unneeded-dirs
+./install-droidcam
 ./install-flatpak
 ./install-common-apps
 ./install-steam

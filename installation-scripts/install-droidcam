@@ -1,0 +1,12 @@
+set -e
+
+cd /tmp/
+wget https://files.dev47apps.net/linux/droidcam_latest.zip
+unzip droidcam_latest.zip -d droidcam
+cd droidcam
+sudo ./install-client
+sudo apt install -y linux-headers-`uname -r` gcc make
+sudo ./install-video
+echo "options v4l2loopback_dc width=1280 height=720" | sudo tee /etc/modprobe.d/droidcam.conf
+lsmod | grep v4l2loopback_dc
+echo "Check the output above contains 'v4l2loopback_dc'"
