@@ -2,15 +2,17 @@ set -e
 set -x
 
 ./remove-unneeded-dirs
+./install-chrome
 ./install-droidcam
 ./install-flatpak
 ./install-common-apps
 ./install-steam
-./install-chrome
-./install-dropbox
 ./install-telegram
 ./install-discord
-./install-dwarf-fortress
-./install-cataclysm-dda
 ./install-minecraft
 ./install-wine
+
+./install-dropbox
+./install-dwarf-fortress
+./install-cataclysm-dda
+./install-obs-studio

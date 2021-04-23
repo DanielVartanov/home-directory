@@ -1,0 +1,4 @@
+set -e
+
+ln -s ~/.personal-data/sensitive-dot-files/.config/obs-studio ~/.config/obs-studio
+sudo apt install -y obs-studio
