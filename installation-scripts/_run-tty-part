@@ -2,10 +2,10 @@
 # 0. `$ sudo dpkg-reconfigure console-setup`
 #     Choose UTF-8, choose "combined cyrillic slavic and non-slavic", most importantly choose Terminus font and the maximum font size (usually marked as "framebuffer")
 # 1. `$ sudo apt install git`
-# 2. `$ git clone --recursive https://github.com/DanielVartanov/home-directory.git ~/.home-directory`
+# 2. `$ git clone --recursive https://github.com/DanielVartanov/home-directory.git ~/.home-directory` # If it asks for your username, you probably mistyped the URL
 # 3. Copy personal-data to ~/.personal-data
 #      if you are copying .personal-data from a FAT32-formatted flash drive, then change permissions of all keys in `.ssh` to 600
-# 4. Run this script `$ ~/.home-directory/installation-scripts/_run-tty-part`
+# 4. Run this script `$ cd ~/.home-directory/installation-scripts && ./_run-tty-part`
 
 set -e
 set -x
