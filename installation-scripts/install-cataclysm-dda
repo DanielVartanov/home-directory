@@ -19,7 +19,7 @@ ln -s ~/Dropbox/savegames/cataclysmdda/save ./save
 cd ~/.opt
 git clone git://git.suckless.org/st vanilla-st
 cd vanilla-st
-make -j8
+make -j$(nproc)
 
 # Tiles are so sloooooooow, ncurses are 5-10 times faster. So you better download ncurses which are nicer, have better fonts etc and just use quick zoom out as a minimap when you are walking long distances. Note: quick zoom in and zoom out is imposible in `tiles` version as it is slooooow
 ## In st, zoom-in is `C-S-PgUp`, zoom-out is `C-S-PgDn`

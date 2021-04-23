@@ -7,7 +7,7 @@ wget https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a.tar.gz
 tar -zxf tmux-3.0a.tar.gz
 cd tmux-3.0a/
 ./configure
-make -j8 && sudo make install
+make -j$(nproc) && sudo make install
 
 mkdir -p ~/.config
 git clone --recursive git@github.com:DanielVartanov/.tmux.git ~/.config/tmux
