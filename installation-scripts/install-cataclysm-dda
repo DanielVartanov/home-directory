@@ -3,7 +3,7 @@ set -e
 mkdir -p ~/.opt
 cd ~/.opt
 
-wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-jenkins-b11414/cataclysmdda-0.E-Linux_x64-Curses-b11414.tar.gz
+wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-jenkins-b11581/cataclysmdda-0.E-Linux_x64-Curses-b11581.tar.gz
 tar -xzf cataclysm-dda.tar.gz
 rm cataclysm-dda.tar.gz
 mv cataclysmdda-0.E cataclysmdda
