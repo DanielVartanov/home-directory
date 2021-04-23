@@ -1,6 +1,5 @@
 xrandr && xrandr --output eDP-1 --mode 3840x2160 --dpi 192
 
-setxkbmap -layout us,ru -option grp:win_space_toggle -option ctrl:nocaps
 synclient MaxTapTime=0
 synclient TapButton1=0
 synclient TapButton2=0
@@ -9,6 +8,8 @@ synclient VertEdgeScroll=0
 synclient VertTwoFingerScroll=1
 synclient HorizTwoFingerScroll=1
 xset r rate 165 45
+setxkbmap -layout us,ru -option grp:win_space_toggle -option ctrl:nocaps
+xset dpms 0 0 1800 # Turn off display after 30 mins of inactivity
 redshift -l 51.6417173:-4.0268903 -b 1.0 &
 dropbox start &
 udiskie --no-notify &
