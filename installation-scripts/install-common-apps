@@ -1,7 +1,7 @@
 set -e
 
 sudo snap install skype --classic
-skype
+skype &
 
 sudo snap install spotify
 spotify &
