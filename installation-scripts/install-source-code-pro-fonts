@@ -1,7 +1,7 @@
 set -e
 
 cd /tmp
-wget -O font.zip https://github.com/adobe-fonts/source-code-pro/releases/download/2.032R-ro%2F1.052R-it%2F1.012R-VAR/TTF-source-code-pro-2.032R-ro-1.052R-it.zip
+wget -O font.zip https://github.com/adobe-fonts/source-code-pro/releases/download/2.038R-ro%2F1.058R-it%2F1.018R-VAR/TTF-source-code-pro-2.038R-ro-1.058R-it.zip
 unzip font.zip
 sudo cp TTF/* /usr/share/fonts/
 sudo fc-cache

@@ -1,11 +1,7 @@
-sudo cat >> /etc/default/grub << EOF
-GRUB_GFXMODE=1024x768x32
-GRUB_GFXPAYLOAD=1024x768x32
-EOF
-
 sudo tee -a /etc/default/grub <<EOF
 GRUB_GFXMODE=1024x768x32
 GRUB_GFXPAYLOAD=1024x768x32
+GRUB_TIMEOUT=3
 EOF
 
 sudo update-grub2

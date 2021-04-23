@@ -11,7 +11,7 @@ make -j8 && sudo make install
 
 mkdir -p ~/.config
 git clone --recursive git@github.com:DanielVartanov/.tmux.git ~/.config/tmux
-ln -s -b ~/.config/tmux/tmux.conf ~/.tmux.conf  # Remove this line after upgrading to tmux 3.2 (as it will look at ~/.config/tmux/tmux.conf by default)
+ln -s -b ~/.config/tmux/tmux.conf ~/.tmux.conf  # Remove this line after upgrading to tmux 3.2+ (as it will look at ~/.config/tmux/tmux.conf by default)
 
 # Allow displaying special characters we use in tmux status line
 cd /tmp

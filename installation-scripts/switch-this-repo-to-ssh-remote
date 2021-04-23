@@ -1,3 +1,5 @@
+set -e
+
 cd ~/.home-directory
 git remote rm origin
 git remote add origin git@github.com:DanielVartanov/home-directory.git

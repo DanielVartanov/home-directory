@@ -6,5 +6,4 @@ wget -O tsetup.tar.xz https://telegram.org/dl/desktop/linux
 tar -xf tsetup.tar.xz
 
 cp Telegram/Telegram ~/.local/bin/
-ln -s -b ~/.personal-data/sensitive-dot-files/.TelegramDesktop ~/.TelegramDesktop
 Telegram &
