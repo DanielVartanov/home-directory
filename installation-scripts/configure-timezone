@@ -1,0 +1,2 @@
+set -e
+sudo timedatectl set-timezone Europe/London

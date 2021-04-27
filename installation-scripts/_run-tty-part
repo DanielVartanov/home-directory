@@ -11,6 +11,7 @@ set -e
 set -x
 
 ./configure-grub
+./configure-timezone
 ./make-dirs
 ./sudo-without-password
 ./ubuntu-add-all-repositories
