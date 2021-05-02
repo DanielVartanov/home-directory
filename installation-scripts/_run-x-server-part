@@ -16,3 +16,4 @@ set -x
 ./install-dwarf-fortress
 ./install-cataclysm-dda
 ./install-obs-studio
+./install-openxcom

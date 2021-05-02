@@ -1,0 +1,5 @@
+set -e
+
+sudo apt install -y libsdl1.2debian libsdl-mixer1.2 libsdl-gfx1.2-5 libsdl-image1.2 libyaml-cpp0.6
+
+# To update the game version simply download an .AppImage file from https://openxcom.org/git-builds/ to ~/Dropbox/savegames/openxcom/OpenXcom.AppImage
