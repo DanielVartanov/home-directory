@@ -1,2 +1,2 @@
 openxcom_dir=/home/daniel/Dropbox/savegames/openxcom
-$openxcom_dir/OpenXcom.AppImage -data $openxcom_dir/data -user $openxcom_dir/user -config $openxcom_dir/config
+$openxcom_dir/OpenXcomEx -data $openxcom_dir -user $openxcom_dir/user -config $openxcom_dir/config
