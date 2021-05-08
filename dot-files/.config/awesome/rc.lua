@@ -68,9 +68,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
+
 local themes_path = awful.util.get_themes_dir()
+local wallpapers_path = awful.util.get_configuration_dir() .. "/wallpapers/"
+-- zenburn_wallpaper = themes_path .. "zenburn/zenburn-background.png"
 beautiful.init(themes_path .. "default/theme.lua")
-beautiful.wallpaper = themes_path .. "zenburn/zenburn-background.png"
+beautiful.wallpaper = wallpapers_path .. "dwarf_fortress/dxvgyVu.jpg"
 beautiful.xresources.set_dpi(192)
 
 -- This is used later as the default terminal and other apps to run.
@@ -123,8 +126,8 @@ end
 -- Create a launcher widget and a main menu
 myawesomemenu = {
    { "hotkeys", function() return false, hotkeys_popup.show_help end},
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end}
+   { "re-run rc.lua", awesome.restart },
+   { "restart X", function() awesome.quit() end}
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
