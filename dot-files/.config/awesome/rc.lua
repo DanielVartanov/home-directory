@@ -14,6 +14,9 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
+
+-- awpwkb (keyboard layout widget)
+
 awpwkb = require("awpwkb")
 kb = awpwkb.init({ default_layout = "en" })
 
@@ -24,7 +27,6 @@ end
 
 local kbmenu = awful.menu({ items = menu_layouts })
 
--- create textbox widget
 local kbind = wibox.widget.textbox()
 kbind:buttons(
    awful.util.table.join(
@@ -33,10 +35,11 @@ kbind:buttons(
       awful.button({ }, 3, function() kbmenu:toggle() end)
    )
 )
--- change markup on layout change
+
 kb.on_layout_change = function (layout)
    kbind:set_markup(' <b>[' .. layout.name .. ']</b> ')
 end
+
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -530,6 +533,43 @@ globalkeys = awful.util.table.join(globalkeys, awful.key.new({ modkey, "Shift" }
                                          htop_window_pid = nil
                                       end
 ))
+
+
+-- Volume control
+
+local function run_amixer_command_and_show_current_volume_level(amixer_cmd)
+   local show_current_volume_level_cmd = "awk -F'[][]' '/Left:/ { print $2 }' <(amixer -D pulse sget Master)"
+
+   awful.spawn.easy_async_with_shell(amixer_cmd .. " 1> /dev/null && " .. show_current_volume_level_cmd,
+                                     function(stdout)
+                                        stdout = stdout:gsub("%s+", "")
+                                        naughty.notify { text = stdout }
+                                     end
+   )
+end
+
+globalkeys = awful.util.table.join(globalkeys,
+                                   awful.key.new({ modkey }, "F9",
+                                      function ()
+                                         awful.util.spawn("pavucontrol")
+                                      end
+                                   ),
+                                   awful.key.new({ modkey }, "F10",
+                                      function ()
+                                         awful.util.spawn("amixer -q -D pulse set Master 1+ toggle", false)
+                                      end
+                                   ),
+                                   awful.key.new({ modkey }, "F11",
+                                      function ()
+                                         run_amixer_command_and_show_current_volume_level("amixer -q -D pulse set Master 1+ 5%-")
+                                      end
+                                   ),
+                                   awful.key.new({ modkey }, "F12",
+                                      function ()
+                                         run_amixer_command_and_show_current_volume_level("amixer -q -D pulse set Master 1+ 5%+")
+                                      end
+                                   )
+)
 
 -- Set keys
 root.keys(globalkeys)
