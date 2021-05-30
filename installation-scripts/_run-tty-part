@@ -21,6 +21,7 @@ set -x
 ./install-common-packages
 ./install-pass
 ./install-common-dev-packages
+./install-nodejs
 ./install-emacs
 ./install-rvm
 ./install-heroku-toolbelt
