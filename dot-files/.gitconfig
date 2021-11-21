@@ -20,3 +20,5 @@
 	user = DanielVartanov
 [merge]
 	conflictstyle = diff3
+[credential]
+	username = DanielVartanov
