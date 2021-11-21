@@ -3,10 +3,12 @@ set -e
 mkdir -p ~/.opt
 cd ~/.opt
 
-wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-jenkins-b11581/cataclysmdda-0.E-Linux_x64-Curses-b11581.tar.gz
+# Note: do not hesitate to switch to nightly/experimental releases, I've switched to a stable one only because it was releases just recently
+
+wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/0.F-2/cataclysmdda-0.F-Linux_x64-Curses-0.F-2.tar.gz
 tar -xzf cataclysm-dda.tar.gz
 rm cataclysm-dda.tar.gz
-mv cataclysmdda-0.E cataclysmdda
+mv cataclysmdda-0.F cataclysmdda
 cd cataclysmdda
 mkdir config
 ln -s ~/.home-directory/installation-scripts/cataclysmdda/options.json ./config/options.json
