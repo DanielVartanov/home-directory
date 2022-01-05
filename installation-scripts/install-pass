@@ -1,11 +1,14 @@
 set -e
 
-sudo apt install -y pass
-
-ln -s -b ~/.personal-data/sensitive-dot-files/.password-store ~/.password-store
-
+# Configure GPG and import keys
+mkdir -p ~/.gnupg
+ln -s -b ~/.home-directory/dot-files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 gpg --import ~/.personal-data/gnupg-keys/secret-gpg.key
 gpg --import-ownertrust ~/.personal-data/gnupg-keys/ownertrust-gpg.txt
+
+# Install pass
+ln -s -b ~/.personal-data/sensitive-dot-files/.password-store ~/.password-store
+sudo apt install -y pass
 
 # Install pass-update extension
 wget -qO - https://pkg.pujol.io/debian/gpgkey | sudo apt-key add -
