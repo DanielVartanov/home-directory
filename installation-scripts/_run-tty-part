@@ -13,6 +13,7 @@ set -x
 ./configure-grub
 ./configure-timezone
 ./make-dirs
+./configure-home-cron-jobs
 ./sudo-without-password
 ./ubuntu-add-all-repositories
 ./ubuntu-update-upgrade
