@@ -14,5 +14,6 @@ export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type directory"
 alias cal="ncal -3 -M -b"
 alias watch="watch --differences --color --interval 0.2 unbuffer"
 alias less="less --quit-if-one-screen"
+alias cat="echo -e 'Please use \e[32mless\e[0m instead of \e[31mcat\e[0m unless you concatenate\n\n' && sleep 0.5 && cat"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
