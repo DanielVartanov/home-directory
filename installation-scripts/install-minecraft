@@ -1,5 +1,9 @@
 set -e
 
-cd ~/.opt
-wget https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
-java -jar Minecraft.jar &
+cd /tmp
+sudo apt install default-jre
+wget https://launcher.mojang.com/download/Minecraft.deb
+sudo dpkg -i Minecraft.deb
+minecraft-laungcher
+
+echo "Please remember to sign into Minecraft with your Microsoft account (pass microsoft/dan@vartanov.net)"
