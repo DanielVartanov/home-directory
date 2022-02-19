@@ -6,6 +6,7 @@ cd ${PWD} # Make RVM reactivate when new Konsole tab is opened (is it still rele
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ "
 export HISTFILESIZE=10000000
 export EDITOR="emacs --quick"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --color=never"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
