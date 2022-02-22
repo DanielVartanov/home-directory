@@ -1,0 +1,3 @@
+# ripgrep maintainer plans to add `--pager` flag to `rg` so that this file will no longer be needed: https://github.com/BurntSushi/ripgrep/issues/86#issuecomment-702170471
+# Check if that already was implemented
+/usr/bin/rg "$@" | bat

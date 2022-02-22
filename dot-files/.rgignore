@@ -1,0 +1,4 @@
+# Force search in these directories even though `--hidden` is off by default
+!.personal-data/
+!.home-directory/
+!.opt

@@ -1,0 +1,6 @@
+set -e
+
+sudo apt install -y ripgrep
+
+ln -s ~/.home-directory/dot-files/.config/ripgrep ~/.config/ripgrep
+ln -s ~/.home-directory/dot-files/.rgignore ~/.rgignore

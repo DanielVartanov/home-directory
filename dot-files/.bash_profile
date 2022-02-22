@@ -7,6 +7,7 @@ export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ "
 export HISTFILESIZE=10000000
 export EDITOR="emacs --quick"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
 
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --color=never"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -16,5 +17,6 @@ alias cal="ncal -3 -M -b"
 alias watch="watch --differences --color --interval 0.2 unbuffer"
 alias less="less --quit-if-one-screen"
 alias cat="echo -e 'Please use \e[32mbat\e[0m instead of \e[31mcat\e[0m unless you concatenate\n\n' >&2 && sleep 0.5 && cat"
+alias grep="echo -e 'Please use \e[32mrg\e[0m instead of \e[31mgrep\e[0m\n\n' >&2 && sleep 0.5 && grep"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

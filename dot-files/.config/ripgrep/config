@@ -1,0 +1,5 @@
+# So that even in pager the output is colourised and decorated
+--pretty
+
+# Searches case insensitively if the pattern is all lowercase. Search case sensitively otherwise. Pass -s/--case-sensitive and -i/--ignore-case to override this.
+--smart-case
