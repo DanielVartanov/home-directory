@@ -1,3 +1,4 @@
 # ripgrep maintainer plans to add `--pager` flag to `rg` so that this file will no longer be needed: https://github.com/BurntSushi/ripgrep/issues/86#issuecomment-702170471
 # Check if that already was implemented
-/usr/bin/rg "$@" | bat
+# Also, a line of `(setq rg-executable "/usr/bin/rg")` in ~/.emacs.d/daniel.el won't be needed as well, remove it
+/usr/bin/rg --pretty "$@" | bat
