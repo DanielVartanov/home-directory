@@ -1,3 +1,0 @@
-cd ~/Dropbox/my-texts
-
-echo -e `date +"%F"` "\t" `grep " :green:" gtd.org | wc -l` "\t" `grep " :green:" gtd.org_archive* | wc -l` >> green-tasks-stats.csv

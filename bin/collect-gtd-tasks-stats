@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cd ~/Dropbox/my-texts
+
+live_tasks_count() {
+    grep " :$1:" gtd.org | wc -l
+}
+
+done_tasks_count() {
+    grep " :$1:" gtd.org_archive* | wc -l
+}
+
+echo -e `date +"%F"` "\t" \
+        $( live_tasks_count this_day ) "\t" \
+        $( live_tasks_count this_week ) "\t" \
+        $( live_tasks_count this_month ) "\t" \
+        $( live_tasks_count this_quarter ) "\t" \
+        $( live_tasks_count this_year ) "\t" \
+        $( live_tasks_count green ) "\t" \
+        $( done_tasks_count green ) >> gtd-tasks-stats.csv
