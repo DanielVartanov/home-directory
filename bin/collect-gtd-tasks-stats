@@ -17,4 +17,6 @@ echo -e `date +"%F"` "\t" \
         $( live_tasks_count this_quarter ) "\t" \
         $( live_tasks_count this_year ) "\t" \
         $( live_tasks_count green ) "\t" \
-        $( done_tasks_count green ) >> gtd-tasks-stats.csv
+        $( done_tasks_count green ) "\t" \
+        $( live_tasks_count extinguisher ) "\t" \
+        $( done_tasks_count extinguisher ) >> gtd-tasks-stats.csv
