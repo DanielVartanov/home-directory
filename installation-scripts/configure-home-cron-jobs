@@ -1,1 +1,4 @@
-echo "30 9 * * * collect-gtd-tasks-stats" | crontab  # It is okay if sometimes it does not get collected due to the PC is off, we need the stats over months, so a few missing days is okay
+# It is okay if sometimes it does not get collected due to the PC is off, we need the stats over months, so a few missing days is okay
+# $(which ...) is required as cron does not use $PATH or something like that
+
+echo "30 9 * * *" $(which collect-gtd-tasks-stats) | crontab
