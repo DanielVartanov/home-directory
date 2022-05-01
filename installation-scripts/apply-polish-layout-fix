@@ -1,0 +1,5 @@
+set -e
+
+# source: https://stackoverflow.com/questions/68905949/alt-space-toggle-doesnt-work-in-xkb-switch
+
+sudo sed --in-place /SPCE/d /usr/share/X11/xkb/symbols/pl

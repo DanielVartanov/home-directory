@@ -19,6 +19,7 @@ set -x
 ./ubuntu-update-upgrade
 ./configure-git
 ./switch-this-repo-to-ssh-remote
+./apply-polish-layout-fix
 ./install-common-packages
 ./install-pass
 ./install-common-dev-packages
