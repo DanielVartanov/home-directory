@@ -703,5 +703,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 awful.spawn(chrome_cmd, { tag = "1" })
-awful.spawn("emacs-light", { tag = "3" })
+awful.spawn("emacs-org-personal", { tag = "3" })
 awful.spawn("emacs --fullscreen", { tag = "4" })
+awful.spawn("emacs-org-work", { tag = "8" })

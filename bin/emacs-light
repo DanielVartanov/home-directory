@@ -1,1 +1,1 @@
-emacs -q -l ~/.emacs.d/light.el +$(expr `cat ~/Dropbox/my-texts/gtd.org | wc -l` - 20) ~/Dropbox/my-texts/gtd.org
+emacs -q -l ~/.emacs.d/light.el

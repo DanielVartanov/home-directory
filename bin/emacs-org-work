@@ -1,0 +1,2 @@
+ORG_FILE=~/Dropbox/my-texts/gtd-work.org
+emacs -q -l ~/.emacs.d/org-work.el +$(expr `cat $ORG_FILE | wc -l` - 20) $ORG_FILE
