@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-emacs --daemon=light -q -l ~/.emacs.d/light.el
