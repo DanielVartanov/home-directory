@@ -1,3 +1,7 @@
 eproject.cfg
 /installation-scripts/git-sh/
 /installation-scripts/willgit/
+/bin/Telegram
+/bin/Updater
+/bin/cask
+/bin/lf
