@@ -3,7 +3,7 @@ set -e
 cd /tmp
 
 # Check for new versions here: https://wiki.trezor.io/Udev_rules
-https://data.trezor.io/udev/trezor-udev_2_all.deb
+curl https://data.trezor.io/udev/trezor-udev_2_all.deb
 sudo dpkg -i trezor-udev_2_all.deb
 
 # Check for new versions here (they are issued quite rarely): https://suite.trezor.io/web/bridge/
