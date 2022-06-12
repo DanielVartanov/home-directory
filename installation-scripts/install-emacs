@@ -2,6 +2,6 @@ set -e
 
 sudo add-apt-repository -y ppa:kelleyk/emacs
 sudo apt update
-sudo apt install -y emacs27
+sudo apt install -y emacs28
 
 git clone --recursive https://github.com/DanielVartanov/emacs-starter-kit.git ~/.emacs.d
