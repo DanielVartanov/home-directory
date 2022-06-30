@@ -3,9 +3,10 @@ set -e
 mkdir -p ~/.opt
 cd ~/.opt
 
-# Note: do not hesitate to switch to nightly/experimental releases, I've switched to a stable one only because it was releases just recently
+# Note: do not hesitate to switch to experimental releases, I've switched to a stable one only because it was releases just recently
+# Also note, that finally you don't have to switch to nightly in order to use experimental, as there are now frequest experimental releases like 0.F-1, 0.F-2, 0.F-3 etc
 
-wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/0.F-2/cataclysmdda-0.F-Linux_x64-Curses-0.F-2.tar.gz
+wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/0.F-3/cataclysmdda-0.F-Linux_x64-Curses-0.F-3.tar.gz
 tar -xzf cataclysm-dda.tar.gz
 rm cataclysm-dda.tar.gz
 mv cataclysmdda-0.F cataclysmdda
