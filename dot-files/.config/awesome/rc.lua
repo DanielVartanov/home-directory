@@ -537,7 +537,7 @@ globalkeys = awful.util.table.join(globalkeys, awful.key.new({ modkey, "Shift" }
 
 -- Volume control
 
-local function run_amixer_command_and_show_current_volume_level(amixer_cmd)
+local function volume_control_run_amixer_command_and_show_current_volume_level(amixer_cmd)
    local show_current_volume_level_cmd = "awk -F'[][]' '/Left:/ { print $2 }' <(amixer -D pulse sget Master)"
 
    awful.spawn.easy_async_with_shell(amixer_cmd .. " 1> /dev/null && " .. show_current_volume_level_cmd,
@@ -548,27 +548,30 @@ local function run_amixer_command_and_show_current_volume_level(amixer_cmd)
    )
 end
 
+local function volume_control_mute()
+   awful.util.spawn("amixer -q -D pulse set Master 1+ toggle", false)
+end
+
+local function volume_control_up()
+   volume_control_run_amixer_command_and_show_current_volume_level("amixer -q -D pulse set Master 1+ 5%+")
+end
+
+local function volume_control_down()
+   volume_control_run_amixer_command_and_show_current_volume_level("amixer -q -D pulse set Master 1+ 5%-")
+end
+
 globalkeys = awful.util.table.join(globalkeys,
-                                   awful.key.new({ modkey }, "F9",
-                                      function ()
-                                         awful.util.spawn("pavucontrol")
-                                      end
-                                   ),
-                                   awful.key.new({ modkey }, "F10",
-                                      function ()
-                                         awful.util.spawn("amixer -q -D pulse set Master 1+ toggle", false)
-                                      end
-                                   ),
-                                   awful.key.new({ modkey }, "F11",
-                                      function ()
-                                         run_amixer_command_and_show_current_volume_level("amixer -q -D pulse set Master 1+ 5%-")
-                                      end
-                                   ),
-                                   awful.key.new({ modkey }, "F12",
-                                      function ()
-                                         run_amixer_command_and_show_current_volume_level("amixer -q -D pulse set Master 1+ 5%+")
-                                      end
-                                   )
+                                   awful.key.new({ modkey }, "F9", function () awful.util.spawn("pavucontrol") end),
+                                   awful.key.new({ }, "XF86AudioPlay", function () awful.util.spawn("pavucontrol") end),
+
+                                   awful.key.new({ modkey }, "F10", function () volume_control_mute() end),
+                                   awful.key.new({ }, "XF86AudioMute", function () volume_control_mute() end),
+
+                                   awful.key.new({ modkey }, "F11", function () volume_control_down() end),
+                                   awful.key.new({ }, "XF86AudioLowerVolume", function () volume_control_down() end),
+
+                                   awful.key.new({ modkey }, "F12", function () volume_control_up() end),
+                                   awful.key.new({ }, "XF86AudioRaiseVolume", function () volume_control_up() end)
 )
 
 -- Set keys
