@@ -1,0 +1,4 @@
+set -e
+
+sudo cp etc-defaults-keyboard /etc/default/keyboard
+sudo dpkg-reconfigure keyboard-configuration
