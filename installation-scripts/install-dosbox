@@ -1,0 +1,4 @@
+set -e
+
+sudo apt install -y dosbox
+ln -s -b ~/.home-directory/dot-files/.dosbox ~/.dosbox

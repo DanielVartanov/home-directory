@@ -8,11 +8,12 @@ set -x
 ./install-droidcam
 ./install-flatpak
 ./install-common-apps
+
+./install-wine
+./install-dosbox
 ./install-steam
 ./install-discord
 ./install-minecraft
-./install-wine
-
 ./install-dwarf-fortress
 ./install-cataclysm-dda
 ./install-obs-studio
