@@ -586,8 +586,8 @@ clientbuttons = awful.util.table.join(
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 
--- This (`focus_relative`) changes focus to the next screen, it was added to make second screen the "main" screen, in the rules (see below) `awful.screen.preferred` was changed to `awful.screen.focused` for that sake. Obviously, it would be better to set `awful.screen.preferred` to second screen, but a way of doing that was not found
-awful.screen.focus_relative(1)
+-- Uncomment this line (`awful.screen.focus_relative(1)`) to focus to the next screen, it was added to make second screen the "main" screen, in the rules (see below) `awful.screen.preferred` was changed to `awful.screen.focused` for that sake. Obviously, it would be better to set `awful.screen.preferred` to second screen, but a way of doing that was not found
+-- awful.screen.focus_relative(1)
 
 awful.rules.rules = {
     -- All clients will match this rule.
