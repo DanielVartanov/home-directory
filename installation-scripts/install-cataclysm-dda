@@ -26,6 +26,7 @@ sed -i '0,/Liberation Mono:pixelsize=12/s//Liberation Mono:pixelsize=48/' config
 
 make -j$(nproc)
 
+# This was true before version 0.G, I did not test tiles performance of 0.G and later:
 # Tiles are so sloooooooow, ncurses are 5-10 times faster. So you better download ncurses which are nicer, have better fonts etc and just use quick zoom out as a minimap when you are walking long distances. Note: quick zoom in and zoom out is imposible in `tiles` version as it is slooooow
 ## In st, zoom-in is `C-S-PgUp`, zoom-out is `C-S-PgDn`
 ## No, really, I tried&tested it, tiles are 5 times slower, they are annoying to play, even if your tiles are the text. But with curses you can really zoom out crazily! And even with this zoom out your movement is fast and there is no hiccups/clowdowns, therefore the minimap is simply not needed! Zoom in/out: ctrl-shift-PgDn/PgUp, it seems to be working in `st` though I can't find it in code.
