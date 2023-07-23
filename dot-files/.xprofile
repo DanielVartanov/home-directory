@@ -9,6 +9,11 @@ xrandr && xrandr --output DP-0 --mode 3840x2160 --dpi 192 --output HDMI-0 --mode
 # synclient VertTwoFingerScroll=1
 # synclient HorizTwoFingerScroll=1
 
+# Arabic: setxkbmap -layout us,ara -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Armenian & Russian: setxkbmap -layout us,am,ru -variant ,eastern-alt, -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Belarusian: setxkbmap -layout us,by -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Polish & Russian: setxkbmap -layout pl,ru -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+
 xset r rate 165 45
 xset dpms 0 0 3600 # Turn off display after 60 mins of inactivity (enough for a language/therapy session)
 redshift -l 51.6417173:-4.0268903 -b 1.0 &
