@@ -1,9 +1,9 @@
 set -e
 
-# Node 14 is an active long term support version
+# Node 18 is an active long term support version
 
-curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 
 # Install Yarn
 
