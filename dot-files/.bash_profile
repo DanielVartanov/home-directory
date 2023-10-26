@@ -21,6 +21,9 @@ alias grep="echo -e 'Please use \e[32mrg\e[0m instead of \e[31mgrep\e[0m\n\n' >&
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+
+# vterm
+
 vterm_printf() {
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then
         # Tell tmux to pass the escape sequences through
@@ -36,4 +39,5 @@ vterm_printf() {
 vterm_prompt_end(){
     vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
 }
+
 export PS1=$PS1'\[$(vterm_prompt_end)\]'
