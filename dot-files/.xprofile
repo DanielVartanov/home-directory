@@ -11,7 +11,7 @@ xrandr && xrandr --output DP-0 --mode 3840x2160 --dpi 192 --output HDMI-0 --mode
 
 # Arabic: setxkbmap -layout us,ara -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
 # Armenian & Russian: setxkbmap -layout us,am,ru -variant ,eastern-alt, -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
-# Belarusian: setxkbmap -layout us,by -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Belarusian: setxkbmap -layout us,by,ru -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
 # Polish & Russian: setxkbmap -layout pl,ru -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
 
 xset r rate 165 45
