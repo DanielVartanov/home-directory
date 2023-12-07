@@ -1,7 +1,23 @@
 set -e
 
-sudo add-apt-repository -y ppa:kelleyk/emacs
-sudo apt update
-sudo apt install -y emacs28
+cd /tmp
+git clone git@github.com:tree-sitter/tree-sitter.git
+cd tree-sitter/
+make
+sudo make install
+
+sudo apt build-dep emacs
+sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev \
+    gnutls-bin libtree-sitter-dev gcc-10 imagemagick libmagick++-dev \
+    libwebp-dev webp libxft-dev libxft2
+git clone https://git.savannah.gnu.org/git/emacs.git -b emacs-29
+cd emacs
+export CC=/usr/bin/gcc-10
+export CXX=/usr/bin/gcc-10
+./autogen.sh
+./configure --with-native-compilation=aot --with-imagemagick --with-json \
+    --with-tree-sitter --with-xft
+make -j$(nproc)
+sudo make install
 
 git clone --recursive https://github.com/DanielVartanov/emacs-starter-kit.git ~/.emacs.d
