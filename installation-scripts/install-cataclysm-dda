@@ -5,6 +5,7 @@ cd ~/.opt
 
 # Note: do not hesitate to switch to experimental releases, I've switched to a stable one only because it was releases just recently
 # Also note, that finally you don't have to switch to nightly in order to use experimental, as there are now frequest experimental releases like 0.F-1, 0.F-2, 0.F-3 etc
+# Look here to see what's changed since 0.G release https://github.com/orgs/CleverRaven/projects/14/views/1
 
 wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/0.G/cdda-linux-curses-x64-2023-03-01-0054.tar.gz
 tar -xzf cataclysm-dda.tar.gz
@@ -13,6 +14,7 @@ mv cataclysmdda-0.G cataclysmdda
 cd cataclysmdda
 mkdir config
 ln -s ~/.home-directory/installation-scripts/cataclysmdda/options.json ./config/options.json
+ln -s ~/.home-directory/installation-scripts/cataclysmdda/keybindings.json ./config/keybindings.json
 
 cd ~/Dropbox/savegames/cataclysmdda
 cp -R save "save.bak.`date +%F`"  # backup the savegame in case the new version of Cataclysm spoils the save (it happens a lot)
