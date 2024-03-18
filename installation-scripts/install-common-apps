@@ -6,4 +6,4 @@ skype &
 sudo snap install spotify
 spotify &
 
-sudo apt install -y xserver-xorg-input-synaptics pavucontrol vlc audacity simplescreenrecorder big-cursor
+sudo apt install -y xserver-xorg-input-synaptics pavucontrol vlc audacity simplescreenrecorder big-cursor scrot
