@@ -9,15 +9,15 @@
 
 Полное описание: https://sites.google.com/site/heroes3hd/rus/%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D0%B8%D0%B3%D1%80%D1%8B?authuser=0
 
+Важно (из HotA FAQ): HotA полностью совместима с HD-mod и корректно работает при любых настройках. Разработчик HD-mod-а входит в команду.
 
 Что делает HD+
 --------------
 
 В одиночной игре есть возможность бесконечно переигрывать битву, если не устроил ее результат.
+Так же полностью совместима с HotA
 
 Полное описание: https://sites.google.com/site/heroes3hd/rus/hd?authuser=0
-
-Важно (из HotA FAQ): HotA полностью совместима с HD-mod и корректно работает при любых настройках. Разработчик HD-mod-а входит в команду.
 
 
 Что делает HotA помимо добавления новых замков
@@ -26,8 +26,7 @@
 В оригинальном SoD есть большое количество ошибок, неточностей и багов --- как игровых, так и эстетических. Какие шаги в HotA предприняты на этот счет?
 Крупная часть нашей работы — это исправление ошибок оригинала: как правка технических багов, так и усовершенствование графики.
 
-А так же правки баланса, новые типы местности, новые артефакты (в том
-числе сборные) и так далее.
+А так же правки баланса, новые типы местности, новые артефакты (в том числе сборные) и так далее.
 
 Полное описание: https://h3hota.com/ru/documentation
 
@@ -46,7 +45,7 @@ Manual installation script
   - Go to "Settings", "Installing, updating"
     - Change "Game installation folder" to `C:\GOG Games`
 
-- Via GOG Galaxy, install Heroes 3 Complete (proof that it is compatible with HotA: https://h3hota.com/ru/faq)
+- Via GOG Galaxy, install Heroes 3 Complete. Note: proof that it is compatible with HotA: https://h3hota.com/ru/faq
 
 - Install Heroes HD mod:
   - Download https://sites.google.com/site/heroes3hd/eng/download?authuser=0
@@ -74,7 +73,11 @@ Manual installation script
   - Install
     - Run it via wine
     - Choose a folder of HoMM3 installaion `C:\GOG Games\HoMM 3 Complete`
-    - Run HD Launcher `wine HD_Launcher.exe`
+    - Run `HD_Launcher.exe`:
+      ```
+      cd ~/.wine/drive_c/GOG\ Games/HoMM\ 3\ Complete/
+      wine HD_Launcher.exe
+      ```
     - Press `Create HD.exe` (you will see that HotA is now selected)
     - Choose Mode of `(stretchable) 32-bit OpenGL`
     - Choose `Full Screen Mode`
