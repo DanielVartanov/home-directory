@@ -3,7 +3,7 @@
 
 cd ${PWD} # Make RVM reactivate when new Konsole tab is opened (is it still relevant?)
 
-export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ "
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\w\[\033[00m\]\$ "
 export HISTFILESIZE=10000000
 export EDITOR="emacs --quick"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
