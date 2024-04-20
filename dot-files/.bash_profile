@@ -19,10 +19,14 @@ alias less="less --quit-if-one-screen"
 alias cat="echo -e 'Please use \e[32mbat\e[0m instead of \e[31mcat\e[0m unless you concatenate\n\n' >&2 && sleep 0.5 && cat"
 alias grep="echo -e 'Please use \e[32mrg\e[0m instead of \e[31mgrep\e[0m\n\n' >&2 && sleep 0.5 && grep"
 
+
+# RVM
+
+export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
-# vterm
+# vterm (PS1 config has to be the last, right after RVM config)
 
 vterm_printf() {
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then
