@@ -19,7 +19,7 @@ set -x
 ./ubuntu-add-all-repositories
 ./ubuntu-update-upgrade
 ./configure-git
-./switch-this-repo-to-ssh-remote
+./configure-this-repo
 ./apply-polish-layout-fix
 ./install-common-packages
 ./install-pass

@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+# Any changes to this file will be ignored by git.
+# If you still want to change this template, run
+# `git update-index --no-skip-worktree dot-files/.local-startup-scripts`,
+# checked in your changes and then run
+# `git update-index --skip-worktree dot-files/.local-startup-scripts` again
+
+# xrandr && xrandr --output DP-0 --mode 3840x2160 --dpi 192 --output HDMI-0 --mode 3840x2160 --dpi 192 --left-of DP-0
+
+# Unomment for Dell XPS laptop:
+# synclient MaxTapTime=0
+# synclient TapButton1=0
+# synclient TapButton2=0
+# synclient TapButton3=0
+# synclient VertEdgeScroll=0
+# synclient VertTwoFingerScroll=1
+# synclient HorizTwoFingerScroll=1
+
+# Arabic: setxkbmap -layout us,ara -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Armenian & Russian: setxkbmap -layout us,am,ru -variant ,eastern-alt, -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Belarusian: setxkbmap -layout us,by,ru -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+# Polish & Russian: setxkbmap -layout pl,ru -option grp:win_space_toggle -option ctrl:nocaps -option altwin:menu_win
+
+# pactl set-default-sink 0 # Set default audio output device (run `pactl list short sinks` for the full list to choose the desired one)
