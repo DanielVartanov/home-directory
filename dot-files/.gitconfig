@@ -3,7 +3,7 @@
 	email = dan@vartanov.net
 
 [alias]
-	delete-merged-branches = "!git branch --merged | grep -v '*' | grep -v master| xargs git branch -d"
+	delete-merged-branches = "!git fetch --prune origin 2>/dev/null && git branch --merged origin/master | rg -vN '(^\\*|master|staging)' | xargs -r git branch -d"
 	pretty-log = "log --pretty=\"%C(Yellow)%h  %C(red)%cd %C(reset)(%C(Green)%cr%C(reset)) %C(auto)%d %C(cyan)%an: %C(reset)%s\" --date=format-local:\" %a %d %b %H:%M\""
 
 [color]
