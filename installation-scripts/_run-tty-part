@@ -27,6 +27,8 @@ set -x
 ./install-nodejs
 ./install-emacs
 ./install-rvm
+./install-solargraph
+./install-go
 ./install-postgres
 
 ./install-source-code-pro-fonts

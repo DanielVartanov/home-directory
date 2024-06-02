@@ -8,6 +8,8 @@ export HISTFILESIZE=10000000
 export EDITOR="emacs --quick"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
+export GOPATH=$HOME/.go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --color=never"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

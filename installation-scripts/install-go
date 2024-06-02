@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+cd /tmp
+
+wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
+sudo ln -sf /usr/local/go/bin/go /usr/local/bin/go
+
+go version
+
+export GOPATH=$HOME/.go
+go install golang.org/x/tools/gopls@latest
