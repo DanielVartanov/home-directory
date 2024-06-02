@@ -1,4 +1,4 @@
 
 set -e
 
-sudo apt install -y ubuntu-restricted-extras nethogs httpie mc curl wget htop sysstat virtualbox dsniff xclip ncdu tree tmux exfat-fuse exfatprogs whois unrar cups cups-client upower jq xz-utils redshift net-tools pydf ntfs-3g udiskie wireless-tools expect iotop hwinfo fd-find ripgrep numlockx
+sudo apt install -y ubuntu-restricted-extras nethogs httpie mc curl wget htop sysstat dsniff xclip ncdu tree tmux exfat-fuse exfatprogs whois unrar cups cups-client upower jq xz-utils redshift net-tools pydf ntfs-3g udiskie wireless-tools expect iotop hwinfo fd-find ripgrep numlockx qemu-system
