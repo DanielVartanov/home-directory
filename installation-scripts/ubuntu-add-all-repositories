@@ -1,5 +1,5 @@
 set -e
 
-sudo add-apt-repository universe
-sudo add-apt-repository multiverse
-sudo add-apt-repository restricted
+sudo add-apt-repository -y universe
+sudo add-apt-repository -y multiverse
+sudo add-apt-repository -y restricted
