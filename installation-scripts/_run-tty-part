@@ -11,18 +11,19 @@ set -e
 set -x
 
 ./configure-keyboard
+./sudo-without-password
+./install-pass
+./install-ubuntu-restricted-extras
 ./configure-grub
 ./configure-timezone
 ./make-dirs
 ./configure-home-cron-jobs
-./sudo-without-password
 ./ubuntu-add-all-repositories
 ./ubuntu-update-upgrade
 ./configure-git
 ./configure-this-repo
 ./apply-polish-layout-fix
 ./install-common-packages
-./install-pass
 ./install-common-dev-packages
 ./install-nodejs
 ./install-emacs
