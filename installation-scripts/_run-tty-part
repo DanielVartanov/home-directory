@@ -27,9 +27,6 @@ set -x
 ./install-nodejs
 ./install-emacs
 ./install-rvm
-./install-heroku-toolbelt
-./install-git-sh
-./install-git-wtf
 ./install-postgres
 
 ./install-source-code-pro-fonts
