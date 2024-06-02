@@ -1,0 +1,6 @@
+set -e
+
+rvm use system
+rvm gemset use global
+snap install ruby # Snap has a newer versions of Ruby than apt
+gem install solargraph

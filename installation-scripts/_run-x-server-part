@@ -2,6 +2,7 @@ set -e
 set -x
 
 ./remove-unneeded-dirs
+./install-solargraph
 ./install-chrome
 ./install-dropbox
 ./install-telegram
