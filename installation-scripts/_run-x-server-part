@@ -5,8 +5,6 @@ set -x
 ./install-chrome
 ./install-dropbox
 ./install-telegram
-./install-droidcam
-./install-flatpak
 ./install-common-apps
 
 ./install-wine

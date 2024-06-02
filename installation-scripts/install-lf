@@ -1,6 +1,6 @@
 set -e
 
 cd /tmp
-wget https://github.com/gokcehan/lf/releases/download/r22/lf-linux-amd64.tar.gz
+wget https://github.com/gokcehan/lf/releases/download/r32/lf-linux-amd64.tar.gz
 tar -xzf lf-linux-amd64.tar.gz
 install ./lf ~/.local/bin/

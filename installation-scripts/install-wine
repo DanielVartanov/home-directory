@@ -4,13 +4,8 @@ sudo dpkg --add-architecture i386
 
 cd /tmp
 
-wget -nc https://dl.winehq.org/wine-builds/winehq.key
-sudo apt-key add winehq.key
-sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' # Mind `focal`, it's bound to Ubuntu 20.04
-
-sudo apt update
-sudo apt install -y --install-recommends winehq-stable
-# If apt-get complains about missing dependencies, install them, then repeat the last two steps (update and install)
+sudo dpkg --add-architecture i386
+sudo apt install -y wine
 
 # Install winetricks
 sudo apt install -y cabextract p7zip unrar unzip wget
