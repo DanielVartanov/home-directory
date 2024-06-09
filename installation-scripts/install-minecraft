@@ -3,7 +3,7 @@ set -e
 cd /tmp
 sudo apt install default-jre
 wget https://launcher.mojang.com/download/Minecraft.deb
-sudo dpkg -i Minecraft.deb
-minecraft-laungcher
+sudo apt install ./Minecraft.deb
+minecraft-launcher
 
 echo "Please remember to sign into Minecraft with your Microsoft account (pass microsoft/dan@vartanov.net)"
