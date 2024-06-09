@@ -2,5 +2,5 @@ set -e
 
 rvm use system
 rvm gemset use global
-sudo apt install -y ruby
+sudo apt install -y ruby ruby-dev
 sudo gem install solargraph
