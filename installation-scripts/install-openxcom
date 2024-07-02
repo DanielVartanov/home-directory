@@ -1,8 +1,10 @@
 set -e
 
-sudo apt install -y libsdl1.2debian libsdl-mixer1.2 libsdl-gfx1.2-5 libsdl-image1.2 libyaml-cpp0.6
+mkdir -p ~/.opt/openxcom
+cd ~/.opt/openxcom
 
-# What is OXCE https://openxcom.org/forum/index.php/topic,5251.0.html
-# Differences between OpenXcom an OXCE: https://openxcom.org/forum/index.php/topic,6459.0.html
+wget https://openxcom.org/oxce/release/Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
+7z x Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
+rm Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
 
-# Current version is v7.0, in order to upgrade read here (yes, all docs of OXCE are done as pinned forum messages): https://openxcom.org/forum/index.php/topic,5258.0.html
+sudo apt install -y libsdl1.2debian libsdl-mixer1.2 libsdl-gfx1.2-5 libsdl-image1.2
