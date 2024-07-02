@@ -1,6 +1,6 @@
 openxcom_data_dir=/home/daniel/Dropbox/savegames/openxcom
 
 ~/.opt/openxcom/OpenXcomEx \
-   -data $openxcom_data_dir/UFO \
+   -data $openxcom_data_dir/data \
    -user $openxcom_data_dir/user \
    -config $openxcom_data_dir/config

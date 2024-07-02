@@ -8,3 +8,6 @@ wget https://openxcom.org/oxce/release/Extended-7.12-1bde457c8-2024-02-24-bionic
 rm Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
 
 sudo apt install -y libsdl1.2debian libsdl-mixer1.2 libsdl-gfx1.2-5 libsdl-image1.2
+
+rmdir UFO
+ln -s ~/Dropbox/savegames/openxcom/data/UFO UFO # Remove this line when OpenXComEx finally learns to act on `-data` argument
