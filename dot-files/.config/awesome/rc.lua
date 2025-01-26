@@ -489,7 +489,7 @@ local htop_window_pid = nil
 globalkeys = awful.util.table.join(globalkeys, awful.key.new({ modkey, "Shift" }, "h",
                                       function ()
                                          if htop_window_pid == nil then
-                                            htop_window_pid = awful.spawn("st htop")
+                                            htop_window_pid = awful.spawn("st glances --fs-free-space")
                                          end
                                       end,
                                       function ()

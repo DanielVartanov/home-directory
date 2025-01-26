@@ -5,3 +5,4 @@ eproject.cfg
 /bin/Updater
 /bin/cask
 /bin/lf
+/bin/glances

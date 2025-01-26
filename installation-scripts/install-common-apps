@@ -9,3 +9,5 @@ spotify &
 sudo snap install zoom-client --channel=latest/edge
 
 sudo apt install -y xserver-xorg-input-synaptics pavucontrol celluloid audacity simplescreenrecorder big-cursor scrot
+
+pip install --user glances
