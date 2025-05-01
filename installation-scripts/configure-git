@@ -1,3 +1,6 @@
 set -e
 
 ln -s -b ~/.home-directory/dot-files/.gitconfig ~/.gitconfig
+ln -s -b ~/.home-directory/dot-files/.gitattributes ~/.gitattributes
+
+git config --global core.attributesfile ~/.gitattributes

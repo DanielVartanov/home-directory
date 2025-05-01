@@ -24,3 +24,8 @@
 	username = DanielVartanov
 [rebase]
 	autoStash = true
+[core]
+	attributesfile = /home/daniel/.gitattributes
+
+[diff "kotlin"]
+    xfuncname = "^\\s*fun\\s+\\w+"
