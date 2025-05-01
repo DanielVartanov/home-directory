@@ -24,6 +24,8 @@
 	username = DanielVartanov
 [rebase]
 	autoStash = true
+[safe]
+	directory = /media/daniel/040ea527-cb05-47f1-87b1-6de4aede089f/personal-data/sensitive-dot-files/.password-store
 [core]
 	attributesfile = /home/daniel/.gitattributes
 
