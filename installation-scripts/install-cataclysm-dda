@@ -7,14 +7,14 @@ cd ~/.opt
 # Also note, that finally you don't have to switch to nightly in order to use experimental, as there are now frequest experimental releases like 0.F-1, 0.F-2, 0.F-3 etc
 # Look here to see what's changed since 0.G release https://github.com/orgs/CleverRaven/projects/14/views/1
 
-wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/0.G/cdda-linux-curses-x64-2023-03-01-0054.tar.gz
+wget -O cataclysm-dda.tar.gz https://github.com/CleverRaven/Cataclysm-DDA/releases/download/0.H-RELEASE/cdda-linux-terminal-only-x64-2024-11-23-1857.tar.gz
 tar -xzf cataclysm-dda.tar.gz
 rm cataclysm-dda.tar.gz
-mv cataclysmdda-0.G cataclysmdda
+mv cataclysmdda-0.H cataclysmdda
 cd cataclysmdda
 mkdir config
-ln -s ~/.home-directory/installation-scripts/cataclysmdda/options.json ./config/options.json
-ln -s ~/.home-directory/installation-scripts/cataclysmdda/keybindings.json ./config/keybindings.json
+ln -s ~/.home-directory/installation-scripts/cataclysmdda/options-0.H.json ./config/options.json
+ln -s ~/.home-directory/installation-scripts/cataclysmdda/keybindings-0.H.json ./config/keybindings.json
 
 cd ~/Dropbox/savegames/cataclysmdda
 cp -R save "save.bak.`date +%F`"  # backup the savegame in case the new version of Cataclysm spoils the save (it happens a lot)
@@ -28,7 +28,7 @@ sed -i '0,/Liberation Mono:pixelsize=12/s//Liberation Mono:pixelsize=48/' config
 
 make -j$(nproc)
 
-# This was true before version 0.G, I did not test tiles performance of 0.G and later:
+# Update from 2024: the following is still true, tiles are super slow and not fun at all, switching to courses feels like bliss.
 # Tiles are so sloooooooow, ncurses are 5-10 times faster. So you better download ncurses which are nicer, have better fonts etc and just use quick zoom out as a minimap when you are walking long distances. Note: quick zoom in and zoom out is imposible in `tiles` version as it is slooooow
 ## In st, zoom-in is `C-S-PgUp`, zoom-out is `C-S-PgDn`
 ## No, really, I tried&tested it, tiles are 5 times slower, they are annoying to play, even if your tiles are the text. But with curses you can really zoom out crazily! And even with this zoom out your movement is fast and there is no hiccups/clowdowns, therefore the minimap is simply not needed! Zoom in/out: ctrl-shift-PgDn/PgUp, it seems to be working in `st` though I can't find it in code.
