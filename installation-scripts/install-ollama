@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+# Install Ollama backend
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Install open-webui frontend with Ollama support and with GPU support
+docker run -d -p 3000:8080 --gpus=all -e WEBUI_AUTH=False -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+# Hint: run that command ^^^ without `-d` if you need to troubleshoot an error
+
+# Upgrade instructions
+# 1. Remove the container:
+# docker rm -f open-webui
+# 2. Pull a new version
+# docker pull ghcr.io/open-webui/open-webui:main
+# 3. Start again with a `docker run` command above
+
+# (!) Important: the models that you install by `ollama pull ...` will NOT be seen in the WebUI as the latter has an empty docker volume in the beginning.
+#     You are going to need to go to WebUI's Admin Panel and install models from the web UI
+
+# By the way, you can use the following command to check the GPU's VRAM:
+# watch -n 1 nvidia-smi
