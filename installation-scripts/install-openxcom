@@ -3,9 +3,16 @@ set -e
 mkdir -p ~/.opt/openxcom
 cd ~/.opt/openxcom
 
-wget https://openxcom.org/oxce/release/Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
-7z x Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
-rm Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z
+mkdir openxcom && \
+    mkdir openxcom/user && \
+    mkdir openxcom/config && \
+    cd openxcom && \
+    wget https://openxcom.org/oxce/release/Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z && \
+    7z x Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z && \
+    rm Extended-7.12-1bde457c8-2024-02-24-bionic-x86_64.7z && \
+    cp -R ~/all-backups-from-xps-laptop-and-gaming-pc-june-2024/yearly-makeshift-backup-feb-2023/dropbox-feb-2023/savegames/openxcom/UFO/* UFO/
+
+./OpenXcomEx -user ./user -config ./config
 
 sudo apt install -y libsdl1.2debian libsdl-mixer1.2 libsdl-gfx1.2-5 libsdl-image1.2
 
