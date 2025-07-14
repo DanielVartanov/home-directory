@@ -30,6 +30,7 @@ set -x
 ./install-solargraph
 ./install-go
 ./install-postgres
+./install-kubectl
 
 ./install-source-code-pro-fonts
 ./install-st

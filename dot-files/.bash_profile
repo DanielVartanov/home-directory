@@ -25,6 +25,9 @@ alias df='df --human-readable --exclude-type=squashfs' # Exclude snap clutter
 # alias cat="echo -e 'Please use \e[32mbat\e[0m instead of \e[31mcat\e[0m unless you concatenate\n\n' >&2 && sleep 0.5 && cat"
 # alias grep="echo -e 'Please use \e[32mrg\e[0m instead of \e[31mgrep\e[0m\n\n' >&2 && sleep 0.5 && grep"
 
+# Krew
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # RVM
 
