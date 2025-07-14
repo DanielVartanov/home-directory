@@ -1,6 +1,7 @@
 #!/bin/bash
 
 xset r rate 165 45
+xset s 3600 3600
 xset dpms 0 0 3600 # Turn off display after 60 mins of inactivity (enough for a language/therapy session)
 redshift -l 51.6417173:-4.0268903 -b 1.0:0.5 2> /dev/null &
 dropbox start 2> /dev/null &
