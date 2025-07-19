@@ -16,5 +16,6 @@ mkdir openxcom && \
 
 sudo apt install -y libsdl1.2debian libsdl-mixer1.2 libsdl-gfx1.2-5 libsdl-image1.2
 
+rm UFO/README.txt
 rmdir UFO
 ln -s ~/Dropbox/savegames/openxcom/data/UFO UFO # Remove this line when OpenXComEx finally learns to act on `-data` argument
