@@ -1,6 +1,6 @@
 emacs -q -l ~/.emacs.d/org-personal.el --eval '(progn
+  (find-file "~/Dropbox/my-texts/gtd-next.org")
+  (split-window-horizontally)
   (find-file "~/Dropbox/my-texts/gtd.org")
   (goto-char (point-max))
-  (split-window-below)
-  (find-file "~/Dropbox/my-texts/gtd-next.org")
-  (goto-char (point-max)))'
+  (forward-line -15))'

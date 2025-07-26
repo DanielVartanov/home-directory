@@ -1,1 +1,1 @@
-emacs -q -l ~/.emacs.d/light.el
+emacs -q -l ~/.emacs.d/light.el ~/Dropbox/my-texts/work/indeed-notes.markdown
