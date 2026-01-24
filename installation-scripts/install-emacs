@@ -3,3 +3,8 @@ set -e
 sudo apt install -y emacs
 
 git clone --recursive https://github.com/DanielVartanov/emacs-starter-kit.git ~/.emacs.d
+
+ln -s -b ~/.personal-data/sensitive-dot-files/.emacs.d/secrets.el ~/.emacs.d/secrets.el
+
+;; Install pre-requisits from glucose-mode
+pip3 install pydexcom
