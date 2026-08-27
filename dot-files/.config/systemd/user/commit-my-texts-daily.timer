@@ -1,0 +1,9 @@
+[Unit]
+Description=commit-my-texts-daily раз в сутки в 03:45
+
+[Timer]
+OnCalendar=*-*-* 03:45:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

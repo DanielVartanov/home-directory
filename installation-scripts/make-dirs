@@ -2,7 +2,12 @@ set -e
 
 mv ~/.ssh ~/.ssh~ || true
 ln -s ~/.personal-data/sensitive-dot-files/.ssh ~/.ssh
+
 mkdir -p ~/.local
 ln -s -b ~/.home-directory/bin ~/.local/bin
+
+mkdir -p ~/.config/systemd
+ln -s -b -T ~/.home-directory/dot-files/.config/systemd/user ~/.config/systemd/user
+
 mkdir -p ~/src
 mkdir -p ~/.opt

@@ -1,0 +1,9 @@
+[Unit]
+Description=Ежедневный коммит всего ~/Dropbox/my-texts
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/commit-my-texts-daily
+
+# Send desktop notification in case of failure
+ExecStopPost=%h/.local/bin/notify-unit-failure %n

@@ -1,0 +1,9 @@
+#!/bin/bash
+# ежедневный коммит всего каталога ~/Dropbox/my-texts.
+# просто фиксирует историю файлов, чтобы её можно было смотреть локально, не полагаясь на Dropbox.
+
+set -e
+
+REPO="$HOME/Dropbox/my-texts"
+git -C $REPO add -A
+git -C $REPO commit --allow-empty-message --allow-empty -m ''

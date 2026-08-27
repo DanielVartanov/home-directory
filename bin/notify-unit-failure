@@ -1,0 +1,19 @@
+#!/bin/bash
+# Уведомление о падении systemd-юнита.
+#
+# Зовётся из ExecStopPost=, то есть после КАЖДОГО прогона, включая успешный --
+# итог systemd кладёт в $SERVICE_RESULT, на успехе сразу выходим.
+# Имя юнита приходит аргументом (%n), systemd его в окружении не передаёт.
+
+[ "${SERVICE_RESULT:-success}" = success ] && exit 0
+
+unit="${1:-неизвестный юнит}"
+echo "$unit: SERVICE_RESULT=$SERVICE_RESULT EXIT_STATUS=${EXIT_STATUS:-?}"
+
+# notify-send ходит по D-Bus в naughty (awesome его подключает в rc.lua), но от
+# самого awesome не зависит. -t 0: уведомление не гаснет само, иначе ночное
+# падение никто не увидит.
+notify-send -u critical -t 0 "$unit упал" \
+    "$(journalctl --user -u "$unit" -n 5 --no-pager -o cat 2>&1)" || true
+
+exit 0
