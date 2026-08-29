@@ -1,0 +1,169 @@
+#!/usr/bin/env rvm-auto-ruby
+# frozen_string_literal: true
+#
+# Heads-up: this file is a pure slop, I only took a look at its externally observable behaviour
+#
+# collect-gtd-stats -- статистика потока задач по истории файла ~/Dropbox/my-texts/gtd.org
+#
+# Корень -- org-запись верхнего уровня (`* `), то есть задача. Считаем по одному
+# коммиту:
+#
+#   added      -- корней стало больше: появились новые задачи
+#   worked_on  -- корень остался, но его поддерево изменилось: над задачей работали
+#   done       -- корень исчез вместе с содержимым: в gtd*.org задачи не помечают
+#                 DONE, а удаляют, поэтому исчезновение == выполнение
+#
+# Один и тот же корень узнаётся по нормализованному заголовку: регистр,
+# пунктуация и маркеры приоритета -- разметка, а не текст задачи. Поэтому
+# поправленная опечатка и проставленный `(!)` -- это worked_on, а не «выполнил и
+# завёл новую». Переформулировка другими словами по-прежнему done + added:
+# граница проходит по словам, и это осознанный размен на простоту.
+#
+# Строки, дописанные ботом my-texts-daily (маркер 🤖), исключены.
+#
+#   collect-gtd-stats              посчитать последний коммит и записать
+#   collect-gtd-stats --dry-run    то же, но ничего не записывать
+#
+# Прогоны по таймеру -- в журнале: journalctl --user -u collect-gtd-stats -n 50
+
+require 'date'
+
+REPO   = ENV.fetch('GTD_STATS_REPO') { File.expand_path('~/Dropbox/my-texts') }
+CSV    = File.join(REPO, 'collect-gtd-stats.csv')
+LOG    = File.join(REPO, 'collect-gtd-stats-log.org')
+HEADER = 'date,days,added,worked_on,done'
+
+# Какие файлы считаем списками задач
+FILES = %w[gtd.org gtd-next.org].freeze
+
+# Граница суток: коммит в 03:45 относится к работе прошедшего дня.
+SHIFT = 4 * 3600
+
+BOT = "\u{1F916}"
+
+# external_encoding задаём явно: под systemd LANG не выставлен, и тогда Ruby
+# пометил бы вывод git как US-ASCII, а первый же strip по кириллице бросил бы
+# ArgumentError. err: File::NULL глушит жалобу на файл, которого в коммите нет --
+# пустой вывод даёт пустой снапшот, и это правильный ответ.
+def git(*args)
+  IO.popen(['git', '-C', REPO, *args], err: File::NULL,
+           external_encoding: 'UTF-8', &:read)
+end
+
+# Строка с 🤖 и всё, что под ней с бо́льшим отступом -- заметка бота. Без этого
+# фильтра бот метил бы worked_on каждой задаче, которую сам прокомментировал.
+def without_bot(lines)
+  kept = []
+  bot = nil
+  lines.each do |line|
+    indent = line[/\A[ \t]*/].size
+    if bot
+      next if line.strip.empty? || indent > bot
+
+      bot = nil
+    end
+    if line.include?(BOT)
+      bot = indent
+      next
+    end
+    kept << line
+  end
+  kept
+end
+
+# Хвостовые org-теги -- разметка, а не текст задачи: gtd_llm_daily.py сам их
+# переставляет (retag), и без срезания переразметка выглядела бы как исчезнувшая
+# задача плюс новая.
+def untag(text)
+  text.sub(/\s+(?::[\w@#%]+)+:\s*\z/, '').strip
+end
+
+# Ключ корня. Регистр и пунктуация выброшены, поэтому «(!) Mrs Collins: форма
+# где?» и «Mrs Collins: форма где?» -- одна задача. Побочно склеиваются задачи-
+# дубликаты, записанные в двух написаниях («Факторио» и «Факторио:») -- их и
+# надо считать одной.
+def norm(text)
+  text.downcase.gsub(/[^[:alnum:]\s]/, ' ').split.join(' ')
+end
+
+# Состояние всех отслеживаемых файлов на момент коммита:
+# { ключ корня => [заголовок как написан, тело поддерева] }. Заголовок хранится
+# ради лога, а сравнивается пара целиком: тогда правка формулировки при том же
+# ключе -- это тоже работа над задачей. Одинаковые ключи склеивают тела.
+def snapshot(sha)
+  roots = {}
+  FILES.each do |file|
+    key = nil
+    without_bot(git('show', "#{sha}:#{file}").lines).each do |line|
+      if line.start_with?('* ')
+        head = untag(line[2..])
+        key = norm(head)
+        roots[key] ||= [head, +'']
+      elsif key
+        roots[key][1] << line
+      end
+    end
+  end
+  roots
+end
+
+def day_of(sha)
+  Time.at(git('log', '-1', '--format=%ct', sha).to_i - SHIFT).strftime('%F')
+end
+
+# roots -- снапшот, из которого брать написание заголовка: для done это состояние
+# ДО (корня уже нет), для остальных -- после.
+def section(title, roots, keys)
+  return [] if keys.empty?
+
+  ["** #{title} (#{keys.size})", *keys.map { |key| "   - #{roots[key][0]}" }]
+end
+
+# ------------------------------------------------------------------ прогон ----
+
+dry = ARGV.include?('--dry-run')
+
+abort "#{REPO} -- не git-репозиторий" unless File.directory?(File.join(REPO, '.git'))
+
+# Файл прежней схемы (done_head, churn_lines и прочее) молча не продолжаем:
+# строки склеились бы под чужим заголовком.
+if File.exist?(CSV) && File.open(CSV, &:gets)&.chomp != HEADER
+  abort "#{CSV} -- от прежней схемы, отодвиньте его в сторону"
+end
+
+if git('diff', '--name-only', 'HEAD^', 'HEAD', '--', *FILES).strip.empty?
+  puts 'последний коммит файлов задач не тронул -- писать нечего'
+  exit
+end
+
+before = snapshot('HEAD^')
+after  = snapshot('HEAD')
+
+added  = after.keys - before.keys
+done   = before.keys - after.keys
+# Пара [заголовок, тело] целиком: сработает и правка текста под корнем, и
+# правка самой формулировки.
+worked = (before.keys & after.keys).select { |key| before[key] != after[key] }
+
+day  = day_of('HEAD')
+days = (Date.parse(day) - Date.parse(day_of('HEAD^'))).to_i
+row  = [day, days, added.size, worked.size, done.size].join(',')
+
+heading = "* #{day}  added #{added.size} · worked_on #{worked.size} · done #{done.size}"
+heading += "  (период #{days} дн.)" unless days == 1
+entry = ['', heading,
+         *section('done', before, done),
+         *section('worked_on', after, worked),
+         *section('added', after, added), ''].join("\n")
+
+puts HEADER
+puts row
+
+if dry
+  puts entry
+  exit
+end
+
+File.write(CSV, "#{HEADER}\n", mode: 'a') unless File.exist?(CSV)
+File.write(CSV, "#{row}\n", mode: 'a')
+File.write(LOG, entry, mode: 'a')

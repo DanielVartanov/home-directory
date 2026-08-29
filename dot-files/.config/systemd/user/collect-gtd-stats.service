@@ -1,0 +1,13 @@
+[Unit]
+Description=Статистика потока задач по истории репозитория my-texts
+After=commit-my-texts-daily.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/collect-gtd-stats
+
+# Send desktop notification in case of failure
+ExecStopPost=%h/.local/bin/notify-unit-failure %n
+
+[Install]
+WantedBy=commit-my-texts-daily.service
